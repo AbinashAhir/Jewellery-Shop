@@ -18,7 +18,15 @@ import lombok.ToString;
 @Getter
 @Entity
 @ToString
+/*
+ * This is the class feedback which contain feedback detials about the
+ * product,purchase id and user
+ */
 public class Feedback {
+	/*
+	 * here @Id annotation is use for making feedback id as a primary key
+	 * and @GeneratedValue is use to generate feedback id in sequence
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "feedbackid")
@@ -32,7 +40,7 @@ public class Feedback {
 		return id;
 	}
 
-	// this method is use for setting id 
+	// this method is use for setting id
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -42,7 +50,7 @@ public class Feedback {
 		return feedback;
 	}
 
-	// this method is use for setting feedback 
+	// this method is use for setting feedback
 	public void setFeedback(String feedback) {
 		this.feedback = feedback;
 	}
@@ -62,7 +70,7 @@ public class Feedback {
 		return product;
 	}
 
-	//this method is use for setting Product variable of product type
+	// this method is use for setting Product variable of product type
 	public void setProduct(Product product) {
 		this.product = product;
 	}
@@ -77,14 +85,13 @@ public class Feedback {
 		this.purchase = purchase;
 	}
 
-	// Mapping to the user table by userid  with the reference of id
+	// Mapping to the user table by userid with the reference of id
 	@OneToOne(cascade = CascadeType.PERSIST)
 
-	
 	@JoinColumn(name = "userid", referencedColumnName = "id")
 	private User user;
 
-	// mapping to the product table with the reference of  column name productid
+	// mapping to the product table with the reference of column name productid
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "productid", referencedColumnName = "productId")
 	private Product product;

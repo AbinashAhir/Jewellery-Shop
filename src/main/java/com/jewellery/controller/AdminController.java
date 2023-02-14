@@ -25,7 +25,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/admin")
 
-//this class is use for adding,updating and deleting the vendor and also there is  view bill and view feedback
+/*
+ * this class is use for adding,updating and deleting the vendor and also there
+ * is view bill and view feedback
+ */
 public class AdminController {
 
 	@Autowired

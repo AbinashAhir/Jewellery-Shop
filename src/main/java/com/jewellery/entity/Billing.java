@@ -22,8 +22,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
+/*
+ * This is the class Billing which contains Billing details like id
+ * ,user,total cost
+ */
 public class Billing {
 
+	/*
+	 * here @Id annotation is use for making id as a primary key and @GeneratedValue
+	 * is use to generate id in sequence
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;

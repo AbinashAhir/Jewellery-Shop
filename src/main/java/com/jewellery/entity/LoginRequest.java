@@ -8,7 +8,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 
-//this class is use to take request for login
+/*
+ * this class is use to take request for login with variable user name and
+ * password
+ */
 public class LoginRequest {
 	private String username;
 	private String password;

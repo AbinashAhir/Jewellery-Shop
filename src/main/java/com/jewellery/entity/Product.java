@@ -20,10 +20,18 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+/*
+ * This is the class purchase which contains product Details like product
+ * id,product name ,purchase Materialc,Product weight,product cost etc
+ */
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = -3966420328222306500L;
 
+	/*
+	 * here @Id annotation is use for making product id as a primary key
+	 * and @GeneratedValue is use to generate product id in sequence
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int productId;

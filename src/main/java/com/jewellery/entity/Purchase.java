@@ -25,7 +25,10 @@ import lombok.Setter;
 @Getter
 @Setter
 
-//This is the class purchase which contains purchase properties like purchase id ,purchase quantity
+/*
+ * This is the class purchase which contains purchase Details like purchase id
+ * ,purchase quantity
+ */
 public class Purchase {
 	/*
 	 * here @Id annotation is use for making purchase id as a primary key
@@ -87,6 +90,7 @@ public class Purchase {
 	private User user;
 
 	// mapping to the product table with the reference of product ID
+
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "productid", referencedColumnName = "productId")
 	private Product product;
