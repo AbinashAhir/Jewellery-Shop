@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.jewellery.exception.DuplicateItemException;
+//import com.jewellery.exception.DuplicateItemException;
 import com.jewellery.exception.ProductNotFoundException;
 import com.jewellery.exception.UserAlreadyExistException;
 import com.jewellery.exception.UserNotFoundException;
@@ -57,11 +57,11 @@ public class JewelleryExceptionHandler {
 		return response;
 	}
 	
-	@ExceptionHandler(DuplicateItemException.class)
-	public ResponseEntity<String> handleDuplicateItemException(DuplicateItemException se) {
-		ResponseEntity<String> response = new ResponseEntity<>(se.getMessage(), HttpStatus.BAD_REQUEST);
-		return response;
-	}
+//	@ExceptionHandler(DuplicateItemException.class)
+//	public ResponseEntity<String> handleDuplicateItemException(DuplicateItemException se) {
+//		ResponseEntity<String> response = new ResponseEntity<>(se.getMessage(), HttpStatus.BAD_REQUEST);
+//		return response;
+//	}
 
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	@ExceptionHandler(ProductNotFoundException.class)
