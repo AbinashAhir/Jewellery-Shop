@@ -42,13 +42,13 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Optional<Product> getAllProductByProductId(Integer productId) throws ProductNotFoundException {
 
-		
-		if(!productRepository.findById(productId).isPresent()) {
+		// this method is use for fetching all product by product id
+		if (!productRepository.findById(productId).isPresent()) {
 			throw new ProductNotFoundException("Product not found with id");
 		} else {
 			return productRepository.findById(productId);
 		}
-		
+
 	}
 
 //	@Override
@@ -56,22 +56,26 @@ public class CustomerServiceImpl implements CustomerService {
 //		return crepo.findAll().stream().filter(e->e.productName).toList();
 //	}
 
+	// below code is creating list to store all product of product type
 	@Override
 	public List<Product> getAllProduct() {
 		return productRepository.findAll();
 	}
 
+	// this method is use for fetching all product by productname
 	@Override
 	public Product getAllProductByProductName(String productName) {
 		return productRepository.findByProductName(productName).orElse(null);
 	}
 
+	// this method is use for fetching product
 	@Override
 	public Product getProduct(String productName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	// this method is use for fetching feedback by Product Name
 	@Override
 	public Product getFeedbackByProductName(String productName) {
 		// TODO Auto-generated method stub
@@ -84,12 +88,14 @@ public class CustomerServiceImpl implements CustomerService {
 		return null;
 	}
 
+	// this method is use for fetching User by uid
 	@Override
 	public User getUserById(int uid) {
 		User userById = userRepository.findById(uid).get();
 		return userById;
 	}
 
+	// this method is use for fetching Product by product id
 	@Override
 	public Product getProductById(int pid) {
 		Optional<Product> product = productRepository.findById(pid);
@@ -97,12 +103,14 @@ public class CustomerServiceImpl implements CustomerService {
 		return product.get();
 	}
 
+	// this method is use to save purchase
 	@Override
 	public void savePurchase(Purchase purchase) {
 		purchaseRepository.save(purchase);
 
 	}
 
+	// this method is use for fetching Purchase by Purchase Id
 	@Override
 	public Purchase getPurchaseById(int purchaseId) {
 		Optional<Purchase> purchaseById = purchaseRepository.findById(purchaseId);
@@ -110,12 +118,14 @@ public class CustomerServiceImpl implements CustomerService {
 		return purchase;
 	}
 
+	// this method is use to save Feedback
 	@Override
 	public void saveFeedBack(Feedback feedback) {
 		feedbackRepository.save(feedback);
 
 	}
 
+	// this method is use for fetching Bill
 	@Override
 	public Billing getBill(Billing bill) {
 
@@ -127,12 +137,14 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
+	// this method is use to save the bills
 	@Override
 	public void saveBill(Billing bill) {
 		billingRepository.save(bill);
 
 	}
 
+	// this method is use for fetching total cost
 	@Override
 	public double getTotalCost(int purchaseId) {
 		Optional<Purchase> purchaseById = purchaseRepository.findById(purchaseId);
@@ -143,6 +155,7 @@ public class CustomerServiceImpl implements CustomerService {
 		return totalCost;
 	}
 
+	// this method is use for fetching User by Purchase Id
 	@Override
 	public User getUserByPurchaseId(int purchaseId) {
 		Purchase purchase = purchaseRepository.findById(purchaseId).get();

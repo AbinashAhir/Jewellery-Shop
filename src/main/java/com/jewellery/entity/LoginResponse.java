@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
+//this class is use to give login response like username ,accesstoken and message
 public class LoginResponse {
 
 	private String username;

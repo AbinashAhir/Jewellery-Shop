@@ -35,6 +35,7 @@ public class AuthController {
 	@Autowired
 	private JwtUtils jwtUtils;
 
+	// below code is for security login and also handle the exception
 	@PostMapping("/login")
 	public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginRequest request, HttpServletResponse response) {
 		try {
@@ -49,7 +50,7 @@ public class AuthController {
 				cookie.setHttpOnly(true);
 				cookie.setPath("/"); // Global
 				response.addCookie(cookie);
-				return ResponseEntity.ok(new LoginResponse(request.getUsername(), jwt,"Login Successful."));
+				return ResponseEntity.ok(new LoginResponse(request.getUsername(), jwt, "Login Successful."));
 			}
 			return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
 		} catch (Exception e) {

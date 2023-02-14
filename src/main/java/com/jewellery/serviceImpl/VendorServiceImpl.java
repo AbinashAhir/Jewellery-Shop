@@ -31,6 +31,7 @@ public class VendorServiceImpl implements VendorService {
 	@Autowired
 	private PurchaseRepository pp;
 
+	// this method is use for adding the products by vendor
 	@Override
 	public String addProduct(Product product) throws DuplicateItemException {
 
@@ -43,6 +44,7 @@ public class VendorServiceImpl implements VendorService {
 
 	}
 
+	// This method is use for updating the products by vendor
 	@Override
 	public String updateProduct(Product product) {
 		Product productId = productRepository.findById(product.getProductId()).get();
@@ -81,6 +83,7 @@ public class VendorServiceImpl implements VendorService {
 		return productId.getProductName() + " updated successfully";
 	}
 
+	// this method is use for Deleting the products by vendors
 	@Override
 	public String deleteProduct(Product product) {
 		Product productId = productRepository.findById(product.getProductId()).get();
@@ -89,6 +92,7 @@ public class VendorServiceImpl implements VendorService {
 		return temp + " Product Deleted";
 	}
 
+	// this method is fetching the bill by Billing id
 	@Override
 	public Billing getBillingById(Integer customerId, Integer purchaseId) {
 //		Billing bl = new Billing();

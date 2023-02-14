@@ -21,12 +21,14 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private UserRepository userRepository;
 
+	// Below code is for register the user,vendor and customer
 	@PostMapping("/register")
-	public ResponseEntity<User> register(@Valid @RequestBody User user) throws TransactionSystemException, UserAlreadyExistException {
+	public ResponseEntity<User> register(@Valid @RequestBody User user)
+			throws TransactionSystemException, UserAlreadyExistException {
 		return ResponseEntity.ok(userService.addUser(user));
 	}
 
