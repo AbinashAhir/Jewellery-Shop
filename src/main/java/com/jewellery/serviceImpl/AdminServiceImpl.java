@@ -112,6 +112,18 @@ public class AdminServiceImpl implements AdminService {
 		return null;
 	}
 
+	@Override
+	public List<Billing> getAllBill() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Feedback> getAllFeedback() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	//Add it.
 //	@Override
