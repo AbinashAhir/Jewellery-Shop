@@ -15,11 +15,6 @@ import com.jewellery.entity.User;
 public interface ProductRepository extends JpaRepository<Product ,Integer > {
 
 	Optional<Product> findByProductName(String productName);
-
-	
-
-	
-
 	
 
 }
