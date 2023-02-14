@@ -50,11 +50,6 @@ public class JewelleryExceptionHandler {
 		return response;
 	}
 
-	@ExceptionHandler(UserNotFoundException.class)
-	public ResponseEntity<String> handleStudentNotFoundException(UserNotFoundException se) {
-		ResponseEntity<String> response = new ResponseEntity<>(se.getErrorMessage(), HttpStatus.NOT_FOUND);
-		return response;
-	}
 	
 	@ExceptionHandler(UserAlreadyExistException.class)
 	public ResponseEntity<String> handleUserAlreadyExistException(UserAlreadyExistException se) {

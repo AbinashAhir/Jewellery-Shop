@@ -32,12 +32,14 @@ public class AdminServiceImpl implements AdminService {
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	
+//	Add It
 
-	@Autowired
-	private BillingRepository billingRepository;
-
-	@Autowired
-	private FeedbackRepository feedbackRepository;
+//	@Autowired
+//	private BillingRepository billingRepository;
+//
+//	@Autowired
+//	private FeedbackRepository feedbackRepository;
 
 	@Override
 	public String addVendor(User user) {
@@ -97,10 +99,12 @@ public class AdminServiceImpl implements AdminService {
 
 	}
 
-	@Override
-	public List<Billing> getAllBill() {
-		return billingRepository.findAll();
-	}
+	
+	//Add it
+//	@Override
+//	public List<Billing> getAllBill() {
+//		return billingRepository.findAll();
+//	}
 
 	@Override
 	public List<User> getAllUser() {
@@ -108,9 +112,11 @@ public class AdminServiceImpl implements AdminService {
 		return null;
 	}
 
-	@Override
-	public List<Feedback> getAllFeedback() {
-		return feedbackRepository.findAll();
-	}
+
+	//Add it.
+//	@Override
+//	public List<Feedback> getAllFeedback() {
+//		return feedbackRepository.findAll();
+//	}
 
 }
