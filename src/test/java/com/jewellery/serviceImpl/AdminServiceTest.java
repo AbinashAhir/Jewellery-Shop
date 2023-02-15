@@ -14,6 +14,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 import com.jewellery.entity.Billing;
 import com.jewellery.entity.Feedback;
@@ -60,6 +63,35 @@ public class AdminServiceTest {
 		assertEquals(response, "Vendor deleted successfully");
 	}
 		
+	
+//	@PutMapping("/updateVendor")
+//	public String updateVendor(@RequestBody User user) {
+//		adminService.updateVendor(user);
+//		return "Vendor updated sucessfully";
+//	}
+//	
+//	@Test
+//	@DisplayName("Update Student")
+//	void updateStudentTest() {
+//		Student student = createStudentMockData();
+//		when(studentRepository.save(student)).thenReturn(student);
+//		Student response = studentService.updateStudent(student);
+//		assertEquals(response.getName(), student.getName());
+//	}
+	
+
+
+	@Test
+	@DisplayName("Update Vendor")
+	void updateVendorTest() {
+		User user = createUserMockData();
+		when(userrepository.save(user)).thenReturn(user);
+		String response = adminServiceimpl.updateVendor(user);
+		assertEquals(response,"Vendor updated");
+	}
+	
+	
+	
 	@Test
 	@DisplayName("Get All Feedback")
 	void getAllFeedbackTest() {
