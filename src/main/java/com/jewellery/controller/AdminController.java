@@ -1,6 +1,5 @@
 package com.jewellery.controller;
 
-
 import com.jewellery.entity.Billing;
 import com.jewellery.entity.Feedback;
 import com.jewellery.entity.User;
@@ -25,38 +24,46 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/admin")
-public class AdminController {
 
+/*
+ * this class is use for adding,updating and deleting the vendor and also there
+ * is view bill and view feedback
+ */
+public class AdminController {
 
 	@Autowired
 	private AdminService adminService;
-	
+
 	@Autowired
 	private UserService userService;
 
-	
+	// Below method is use for update the vendor
 	@PostMapping("/addVendor")
-	public String addVendor(@RequestBody User user){
+	public String addVendor(@RequestBody User user) {
 
 		userService.addVendor(user);
 		return "Vendor Added Successfully";
 	}
 
+	// Below method is use for update the vendor
 	@PutMapping("/updateVendor")
 	public User updateVendor(@RequestBody User user) {
 		return adminService.updateVendor(user);
 	}
 
+	// Below method is use for delete the vendor
 	@DeleteMapping("/deleteVendor/{userId}")
 	public String deleteVender(@PathVariable("userId") Integer id) {
 		return adminService.deleteVendor(id);
 	}
-	
+
+	// Below list is use for viewing feedback
 	@GetMapping("/viewFeedback")
-	public List<Feedback> getAllFeedback(){
+	public List<Feedback> getAllFeedback() {
 		return adminService.getAllFeedback();
 	}
 
+	// Below list is use for view bill
 	@GetMapping("/viewBill")
 	public List<Billing> getAllBill() {
 		return adminService.getAllBill();

@@ -21,25 +21,34 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private final UserRepository usersRepository;
 
+	/*
+	 * this method is use to see whether username is present or not if username
+	 * already present then it will throw an exception with message user already
+	 * exists
+	 */
 	@Override
 	public User addUser(User user) throws TransactionSystemException, UserAlreadyExistException {
-		
-		if(usersRepository.findByUsername(user.getUsername()).isPresent()) {
+
+		if (usersRepository.findByUsername(user.getUsername()).isPresent()) {
 			throw new UserAlreadyExistException("User already exists");
-		}
-		else {
+		} else {
 			String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
+			String encryptedcPassword = new BCryptPasswordEncoder().encode(user.getConfirmPassword());
 			user.setPassword(encryptedPassword);
+			user.setConfirmPassword(encryptedcPassword);
 			return usersRepository.save(user);
 		}
-		
-		
+
 //		String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
 //		user.setPassword(encryptedPassword);
 //		return usersRepository.save(user);
-		
+
 	}
 
+	/*
+	 * this method is use for encrypt password and pass the message
+	 * "Vendor added successfully"
+	 */
 	@Override
 	public String addVendor(User user) {
 		String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
@@ -48,6 +57,9 @@ public class UserServiceImpl implements UserService {
 		return "Vendor added successfully";
 	}
 
+	/*
+	 * this method is use update the encrypt password
+	 */
 	@Override
 	public User updateVendor(User user) {
 		String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
