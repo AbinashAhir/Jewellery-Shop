@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.jewellery.entity.User;
 import com.jewellery.serviceImpl.JpaUserDetailsService;
 
 import lombok.RequiredArgsConstructor;
@@ -34,9 +35,11 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		return http.cors(AbstractHttpConfigurer::disable).csrf(AbstractHttpConfigurer::disable)
 
-				.authorizeHttpRequests(
-						auth -> auth.requestMatchers("/api/auth/login", "/api/auth/register", "/swagger-ui.html",
-								"/swagger-ui/**", "/v3/api-docs/**").permitAll().anyRequest().authenticated())
+				.authorizeHttpRequests(auth -> auth
+
+						.requestMatchers("/api/auth/login", "/api/auth/register", "/swagger-ui.html", "/swagger-ui/**",
+								"/v3/api-docs/**")
+						.permitAll().anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
 				.userDetailsService(userDetailsService).build();

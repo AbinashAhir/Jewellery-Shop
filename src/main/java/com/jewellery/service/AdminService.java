@@ -13,7 +13,7 @@ public interface AdminService {
 
 	public String addVendor(User user);
 
-	public User updateVendor(User user);
+	public String updateVendor(User user);
 
 	public String deleteVendor(Integer userId);
 

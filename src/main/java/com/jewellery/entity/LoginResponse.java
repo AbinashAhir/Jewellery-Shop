@@ -31,4 +31,10 @@ public class LoginResponse {
 		this.message = message;
 	}
 
+	public LoginResponse(String username2, String string) {
+		this.username = username2;
+		this.message = string;
+		
+	}
+
 }

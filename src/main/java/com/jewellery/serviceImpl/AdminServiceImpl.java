@@ -46,7 +46,7 @@ public class AdminServiceImpl implements AdminService {
 
 	// this method is use for updating the vendor
 	@Override
-	public User updateVendor(User user) {
+	public String updateVendor(User user) {
 		User users = userRepository.findById(user.getId()).get();
 
 		if (Objects.nonNull(user.getId())) {
@@ -83,7 +83,8 @@ public class AdminServiceImpl implements AdminService {
 			users.setRole(user.getRole());
 		}
 
-		return userRepository.save(users);
+		userRepository.save(users);
+		return "Vendor updated";
 	}
 
 	// this method is use to delete vendor

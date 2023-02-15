@@ -9,7 +9,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
-import static jakarta.persistence.GenerationType.SEQUENCE;
+import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Getter
 @Setter
@@ -21,7 +21,7 @@ import static jakarta.persistence.GenerationType.SEQUENCE;
 public class User {
 	@Id
 	@SequenceGenerator(name = "user_sequence", sequenceName = "user_sequence", allocationSize = 1)
-	@GeneratedValue(strategy = SEQUENCE, generator = "user_sequence")
+	@GeneratedValue(strategy = IDENTITY, generator = "user_sequence")
 	@Column(name = "id", updatable = false)
 	private Integer id;
 

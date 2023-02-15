@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException.BadRequest;
 
 import com.jewellery.entity.BadCredentialResponse;
+import com.jewellery.entity.LoginResponse;
+import com.jewellery.entity.RegisterResponse;
 import com.jewellery.entity.User;
 import com.jewellery.exception.UserAlreadyExistException;
 import com.jewellery.repository.UserRepository;
@@ -61,7 +63,8 @@ public class UserController {
 		}
 
 		else {
-			return ResponseEntity.ok(userService.addUser(user));
+			userService.addUser(user);
+			return ResponseEntity.ok(new RegisterResponse("Registration Successful.",user.getUsername()));
 		}
 
 	}
