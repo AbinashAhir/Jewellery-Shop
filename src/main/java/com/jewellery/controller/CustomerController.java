@@ -115,8 +115,9 @@ public class CustomerController {
 		}
 		feedback.setProduct(product);
 
-		customerService.saveFeedBack(feedback);
-		return feedback.getFeedback();
+		
+//		return feedback.getFeedback();
+		return customerService.saveFeedBack(feedback);
 	}
 
 	// below code is use for generating bill for the customer

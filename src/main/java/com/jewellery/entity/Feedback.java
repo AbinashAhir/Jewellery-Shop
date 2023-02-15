@@ -30,7 +30,7 @@ public class Feedback {
 	@Column(name = "feedbackid")
 	private int id;
 
-	@NotBlank(message = "Feedback can't be blank.")
+//	@NotBlank(message = "Feedback can't be blank.")
 	private String feedback;
 
 	// Mapping to the user table by userid with the reference of id

@@ -95,8 +95,9 @@ public class CustomerServiceImpl implements CustomerService {
 
 	// this method is use to save Feedback
 	@Override
-	public void saveFeedBack(Feedback feedback) {
+	public String saveFeedBack(Feedback feedback) {
 		feedbackRepository.save(feedback);
+		return "Feedback saved";
 
 	}
 
