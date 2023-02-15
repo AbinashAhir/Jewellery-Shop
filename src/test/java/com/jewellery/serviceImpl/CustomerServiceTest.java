@@ -144,7 +144,7 @@ package com.jewellery.serviceImpl;
 					user.setEmail("email");
 					user.setAddress("address");
 					user.setPassword("password");
-					user.setPhoneNumber(9L);
+					user.setPhoneNumber("99999999");
 					user.setRole("USER");
 					return user;
 							}

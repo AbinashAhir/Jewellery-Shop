@@ -130,7 +130,7 @@ public class AdminServiceTest {
 		user.setEmail("email");
 		user.setAddress("address");
 		user.setPassword("password");
-		user.setPhoneNumber(9L);
+		user.setPhoneNumber("9L");
 		user.setRole("USER");
 		return user;
 	}
