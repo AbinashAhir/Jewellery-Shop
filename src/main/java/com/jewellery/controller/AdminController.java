@@ -53,8 +53,9 @@ public class AdminController {
 	@SecurityRequirement(name = "Bearer Authentication")
 	@PreAuthorize(value = "hasRole('ROLE_ADMIN')")
 	@PutMapping("/updateVendor")
-	public User updateVendor(@RequestBody User user) {
-		return adminService.updateVendor(user);
+	public String updateVendor(@RequestBody User user) {
+		adminService.updateVendor(user);
+		return "Vendor updated sucessfully";
 	}
 
 	// Below method is use for delete the vendor
