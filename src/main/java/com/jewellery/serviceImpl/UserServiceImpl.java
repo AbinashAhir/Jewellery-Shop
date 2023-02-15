@@ -29,7 +29,9 @@ public class UserServiceImpl implements UserService {
 		}
 		else {
 			String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
+			String encryptedcPassword = new BCryptPasswordEncoder().encode(user.getConfirmPassword());
 			user.setPassword(encryptedPassword);
+			user.setConfirmPassword(encryptedcPassword);
 			return usersRepository.save(user);
 		}
 		

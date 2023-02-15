@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jewellery.config.JwtUtils;
+import com.jewellery.entity.BadCredentialResponse;
 import com.jewellery.entity.LoginRequest;
 import com.jewellery.entity.LoginResponse;
+
+import com.jewellery.exception.BadCredentialsException;
 import com.jewellery.serviceImpl.JpaUserDetailsService;
 
 import jakarta.servlet.http.Cookie;
@@ -36,7 +39,8 @@ public class AuthController {
 	private JwtUtils jwtUtils;
 
 	@PostMapping("/login")
-	public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginRequest request, HttpServletResponse response) {
+	public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginRequest request, HttpServletResponse response)
+			throws BadCredentialsException {
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),
 					request.getPassword(), new ArrayList<>()));
@@ -49,12 +53,15 @@ public class AuthController {
 				cookie.setHttpOnly(true);
 				cookie.setPath("/"); // Global
 				response.addCookie(cookie);
-				return ResponseEntity.ok(new LoginResponse(request.getUsername(), jwt,"Login Successful."));
+				return ResponseEntity.ok(new LoginResponse(request.getUsername(), jwt, "Login Successful."));
+			} else {
+				throw new BadCredentialsException();
 			}
-			return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
-		} catch (Exception e) {
+		}catch (Exception e) {
 			System.out.println(e);
-			return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
+			LoginResponse responses = new LoginResponse("Your credentials are incorrect.");
+			responses.setUsername(request.getUsername());
+			return new ResponseEntity<>(responses, HttpStatus.UNAUTHORIZED);
 		}
 	}
 
