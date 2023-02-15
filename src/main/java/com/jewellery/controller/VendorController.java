@@ -37,8 +37,8 @@ public class VendorController {
 	}
 
 	@DeleteMapping("/delete")
-	public String deleteProduct(@RequestBody Product product) {
-		return vs.deleteProduct(product);
+	public String deleteProduct(@RequestBody Integer productId) {
+		return vs.deleteProduct(productId);
 	}
 
 

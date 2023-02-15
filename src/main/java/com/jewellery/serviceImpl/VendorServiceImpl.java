@@ -81,13 +81,6 @@ public class VendorServiceImpl implements VendorService {
 		return productId.getProductName() + " updated successfully";
 	}
 
-	@Override
-	public String deleteProduct(Product product) {
-		Product productId = productRepository.findById(product.getProductId()).get();
-		var temp = productId.getProductName().toString();
-		productRepository.deleteById(productId.getProductId());
-		return temp + " Product Deleted";
-	}
 
 	@Override
 	public Billing getBillingById(Integer customerId, Integer purchaseId) {
@@ -103,6 +96,14 @@ public class VendorServiceImpl implements VendorService {
 //		}
 		return null;
 
+	}
+
+
+	@Override
+	public String deleteProduct(Integer productId) {
+		productRepository.deleteById(productId);
+		return "Product Deleted";
+	
 	}
 
 }

@@ -24,8 +24,6 @@ import com.jewellery.service.AdminService;
 @Service
 public class AdminServiceImpl implements AdminService {
 
-	@Autowired
-	private AdminRepository adminRepository;
 
 	@Autowired
 	private UserRepository userRepository;
@@ -33,13 +31,12 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
-//	Add It
 
-//	@Autowired
-//	private BillingRepository billingRepository;
-//
-//	@Autowired
-//	private FeedbackRepository feedbackRepository;
+	@Autowired
+	private BillingRepository billingRepository;
+
+	@Autowired
+	private FeedbackRepository feedbackRepository;
 
 	@Override
 	public String addVendor(User user) {
@@ -85,50 +82,35 @@ public class AdminServiceImpl implements AdminService {
 			users.setRole(user.getRole());
 		}
 
-		
-
 		return userRepository.save(users);
 	}
 
 	@Override
 	public String deleteVendor(Integer userId) {
-		var firstName = userRepository.findById(userId).get().getFirstName();
-		var lastName = userRepository.findById(userId).get().getLastName();
 		userRepository.deleteById(userId);
-		return "Vendor " + firstName+" "+lastName + " deleted successfully";
+		return "Vendor deleted successfully";
 
 	}
 
 	
 	//Add it
-//	@Override
-//	public List<Billing> getAllBill() {
-//		return billingRepository.findAll();
-//	}
+	@Override
+	public List<Billing> getAllBill() {
+		return billingRepository.findAll();
+	}
+
+
+
+	//Add it.
+	@Override
+	public List<Feedback> getAllFeedback() {
+		return feedbackRepository.findAll();
+	}
 
 	@Override
 	public List<User> getAllUser() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public List<Billing> getAllBill() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Feedback> getAllFeedback() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	//Add it.
-//	@Override
-//	public List<Feedback> getAllFeedback() {
-//		return feedbackRepository.findAll();
-//	}
 
 }
