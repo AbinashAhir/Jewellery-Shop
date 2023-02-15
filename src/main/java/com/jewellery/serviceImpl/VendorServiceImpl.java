@@ -92,21 +92,4 @@ public class VendorServiceImpl implements VendorService {
 		return temp + " Product Deleted";
 	}
 
-	// this method is fetching the bill by Billing id
-	@Override
-	public Billing getBillingById(Integer customerId, Integer purchaseId) {
-//		Billing bl = new Billing();
-//		bl.setCustomerId(customerId);
-//		Registration user = rp.findById(customerId).orElse(null);
-//
-//		if (user != null) {
-//			return user.getPurchases().stream().map(Purchase::getProduct).collect(Collectors.toList());
-//
-//		} else {
-//			return null;
-//		}
-		return null;
-
-	}
-
 }

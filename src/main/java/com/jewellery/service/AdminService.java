@@ -13,8 +13,6 @@ public interface AdminService {
 
 	public String addVendor(User user);
 
-	List<User> getAllUser();
-
 	public User updateVendor(User user);
 
 	public String deleteVendor(Integer userId);

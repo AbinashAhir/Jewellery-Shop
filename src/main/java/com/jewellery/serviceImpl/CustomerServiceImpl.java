@@ -51,11 +51,6 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
-//	@Override
-//	public List<Product> getAllProductByProductName(String productName) {
-//		return crepo.findAll().stream().filter(e->e.productName).toList();
-//	}
-
 	// below code is creating list to store all product of product type
 	@Override
 	public List<Product> getAllProduct() {
@@ -66,26 +61,6 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Product getAllProductByProductName(String productName) {
 		return productRepository.findByProductName(productName).orElse(null);
-	}
-
-	// this method is use for fetching product
-	@Override
-	public Product getProduct(String productName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	// this method is use for fetching feedback by Product Name
-	@Override
-	public Product getFeedbackByProductName(String productName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String purchaseProduct(int uid, int pid) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	// this method is use for fetching User by uid
@@ -165,12 +140,13 @@ public class CustomerServiceImpl implements CustomerService {
 
 //	@Override
 //	public Product getProduct(String productName) {
-//		return crepo.findProduct(productName).orElse(null);
+//		// TODO Auto-generated method stub
+//		return null;
 //	}
-//
+
 //	@Override
-//	public Product getFeedbackByProductName(String string) {
-//		return crepo.findProduct(productName).orElse(null);
+//	public Product getProduct(String productName) {
+//		return productRepository.findProduct(productName).orElse(null);
 //	}
 
 }

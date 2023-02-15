@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +27,7 @@ import com.jewellery.exception.UserNotFoundException;
 import com.jewellery.repository.ProductRepository;
 import com.jewellery.service.CustomerService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 
 @RestController
@@ -36,12 +38,16 @@ public class CustomerController {
 	private CustomerService customerService;
 
 	// below method is use for searching the product by productname
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_USER')")
 	@GetMapping("/search/{productName}")
 	public Product getAllProductByProductName(@PathVariable("productName") String productName) {
 		return customerService.getAllProductByProductName(productName);
 	}
 
 	// below method is use for searching the product by productid
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_USER')")
 	@GetMapping("/search/id/{productid}")
 	public Optional<Product> getAllProductByProductId(@PathVariable("productid") Integer productid)
 			throws ProductNotFoundException {
@@ -49,12 +55,16 @@ public class CustomerController {
 	}
 
 	// below method is use for viewing the product..
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_USER')")
 	@GetMapping("/viewProducts")
 	public List<Product> getAllProduct() {
 		return customerService.getAllProduct();
 	}
 
 	// below method is use for purchase the product by customer
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_USER')")
 	@PostMapping("/purchase/{uid}/{pid}")
 	public String purchaseProduct(@Valid @RequestBody Purchase purchase, @PathVariable("uid") int uid,
 			@PathVariable("pid") int pid) {
@@ -80,31 +90,42 @@ public class CustomerController {
 //	}
 
 	// below code is for providing feedback about the product by customer
+
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_USER')")
 	@PostMapping("/feedback/{customerId}/{purchaseId}")
 	public String giveFeedbackByProductName(@RequestBody Feedback feedback, @PathVariable("customerId") int customerId,
 			@PathVariable("purchaseId") int purchaseId) throws UserNotFoundException, Exception {
+
 		User user = customerService.getUserById(purchaseId);
 		if (user == null) {
 			throw new UserNotFoundException("User with id: " + customerId + " not found");
 		}
 		feedback.setUser(user);
+
 		Purchase purchase = customerService.getPurchaseById(purchaseId);
 		if (purchase == null) {
 			throw new UserNotFoundException("Purchase with id: " + purchaseId + " not found");
 		}
 		feedback.setPurchase(purchase);
+
 		Product product = customerService.getProductById(purchaseId);
 		if (product == null) {
 			throw new UserNotFoundException("Product with id: " + purchaseId + " not found");
 		}
 		feedback.setProduct(product);
+
 		customerService.saveFeedBack(feedback);
 		return feedback.getFeedback();
 	}
 
 	// below code is use for generating bill for the customer
+
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_USER')")
 	@GetMapping("/getBill/{purchaseId}")
 	public Billing getBill(@PathVariable("purchaseId") int purchaseId) throws UserNotFoundException, Exception {
+
 		User user = customerService.getUserByPurchaseId(purchaseId);
 		if (user == null) {
 			throw new UserNotFoundException("User with id: " + user + " not found");

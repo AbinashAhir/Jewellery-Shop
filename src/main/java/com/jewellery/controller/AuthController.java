@@ -55,11 +55,10 @@ public class AuthController {
 				cookie.setPath("/"); // Global
 				response.addCookie(cookie);
 				return ResponseEntity.ok(new LoginResponse(request.getUsername(), jwt, "Login Successful."));
-<<<<<<< HEAD
+
 			} else {
 				throw new BadCredentialsException();
-=======
->>>>>>> 33adb19e43f780e8e5832ddce25c133679b05f60
+
 			}
 		}catch (Exception e) {
 			System.out.println(e);
