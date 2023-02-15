@@ -64,7 +64,7 @@ public class CustomerController {
 
 	// below method is use for purchase the product by customer
 	@SecurityRequirement(name = "Bearer Authentication")
-	@PreAuthorize(value = "hasRole('ROLE_USER')")
+	@PreAuthorize(value = "!hasRole('ROLE_ADMIN') && !hasRole('ROLE_VENDOR')")
 	@PostMapping("/purchase/{uid}/{pid}")
 	public String purchaseProduct(@Valid @RequestBody Purchase purchase, @PathVariable("uid") int uid,
 			@PathVariable("pid") int pid) {

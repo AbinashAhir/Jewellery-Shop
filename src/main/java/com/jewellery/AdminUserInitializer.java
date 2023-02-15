@@ -27,6 +27,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser1.setEmail("ahirabinash@gmail.com");
 		adminUser1.setPhoneNumber("8457823790");
 		adminUser1.setAddress("Banglore");
+		adminUser1.setId(1);
 
 		
 		
@@ -40,6 +41,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser2.setEmail("Vidya@gmail.com");
 		adminUser2.setPhoneNumber("8457898790");
 		adminUser2.setAddress("Banglore");
+		adminUser2.setId(2);
 		
 		User adminUser3 = new User();
 		String encryptedPassword3 = new BCryptPasswordEncoder().encode("chandu27");
@@ -51,6 +53,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser3.setEmail("Chanduks027@gmail.com");
 		adminUser3.setPhoneNumber("7899345287");
 		adminUser3.setAddress("Hassan");
+		adminUser3.setId(3);
 		
 		User adminUser4= new User();
 		String encryptedPassword4 = new BCryptPasswordEncoder().encode("Mounik@3320");
@@ -62,6 +65,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser4.setEmail("marlamounika07@gmail.com");
 		adminUser4.setPhoneNumber("9652365180");
 		adminUser4.setAddress("Banglore");
+		adminUser4.setId(4);
 		
 		User adminUser5 = new User();
 		String encryptedPassword5 = new BCryptPasswordEncoder().encode("Raghu@2001");
@@ -73,6 +77,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser5.setEmail("raghuvijay1629@gmail.com");
 		adminUser5.setPhoneNumber("6369075050");
 		adminUser5.setAddress("Banglore");
+		adminUser5.setId(5);
 		
 		User adminUser6 = new User();
 		String encryptedPassword6 = new BCryptPasswordEncoder().encode("shubham123");
@@ -84,6 +89,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser6.setEmail("shubham2@gmail.com");
 		adminUser6.setPhoneNumber("9523813880");
 		adminUser6.setAddress("Banglore");
+		adminUser6.setId(6);
 
 
 		// Save the admins to the database
