@@ -35,7 +35,7 @@ public class User {
 //	@NotBlank(message = "Email is required")
 	private String email;
 
-	private Long phoneNumber;
+	private String phoneNumber;
 
 	private String address;
 

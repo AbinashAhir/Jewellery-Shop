@@ -36,7 +36,7 @@ public class UserController {
 
 	// Below code is for register the user,vendor and customer
 //	@SecurityRequirement(name = "Bearer Authentication")
-//	@PreAuthorize(value = "hasRole('ROLE_USER') || hasRole('ROLE_ADMIN')")
+//	@PreAuthorize(value = "hasRole('ROLE_USER')")
 	@PostMapping("/register")
 
 	public ResponseEntity<?> register(@Valid @RequestBody User user, BindingResult result)
