@@ -1,4 +1,4 @@
-package com.jewellery.controller;
+package com.jewellery.serviceImpl;
 	
 	import static org.junit.jupiter.api.Assertions.assertEquals;
 	import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -29,7 +29,7 @@ package com.jewellery.controller;
 
 
 	@ExtendWith(MockitoExtension.class)
-	public class CustomerControllerTest {
+	public class CustomerServiceTest {
 		
 		@InjectMocks
 		private CustomerServiceImpl customerServiceimpl;

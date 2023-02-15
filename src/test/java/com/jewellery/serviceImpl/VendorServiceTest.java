@@ -1,4 +1,4 @@
-package com.jewellery.controller;
+package com.jewellery.serviceImpl;
 	
 	import static org.junit.jupiter.api.Assertions.assertEquals;
 	import static org.mockito.Mockito.doNothing;
@@ -20,7 +20,7 @@ import com.jewellery.repository.ProductRepository;
 	import com.jewellery.serviceImpl.VendorServiceImpl;
 
 	@ExtendWith(MockitoExtension.class)
-	public class VendorControllerTest {
+	public class VendorServiceTest {
 		
 		@InjectMocks
 		VendorServiceImpl vendorServiceImpl;

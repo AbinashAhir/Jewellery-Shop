@@ -30,7 +30,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
-	
+
 
 	@Autowired
 	private BillingRepository billingRepository;
@@ -38,12 +38,14 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private FeedbackRepository feedbackRepository;
 
+	// this method is use for adding the vendor
 	@Override
 	public String addVendor(User user) {
 		userRepository.save(user);
 		return "Vendor added successfully";
 	}
 
+	// this method is use for updating the vendor
 	@Override
 	public User updateVendor(User user) {
 		User users = userRepository.findById(user.getId()).get();
@@ -85,9 +87,11 @@ public class AdminServiceImpl implements AdminService {
 		return userRepository.save(users);
 	}
 
+	// this method is use to delete vendor
 	@Override
 	public String deleteVendor(Integer userId) {
 		userRepository.deleteById(userId);
+
 		return "Vendor deleted successfully";
 
 	}
@@ -112,5 +116,17 @@ public class AdminServiceImpl implements AdminService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
+
+
+
+	// Add it.
+//	@Override
+//	public List<Feedback> getAllFeedback() {
+//		return feedbackRepository.findAll();
+//	}
+
 
 }
