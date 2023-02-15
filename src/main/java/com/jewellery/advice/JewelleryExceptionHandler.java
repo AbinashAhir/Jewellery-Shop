@@ -51,13 +51,12 @@ public class JewelleryExceptionHandler {
 		return response;
 	}
 
-	
 	@ExceptionHandler(UserAlreadyExistException.class)
 	public ResponseEntity<String> handleUserAlreadyExistException(UserAlreadyExistException se) {
 		ResponseEntity<String> response = new ResponseEntity<>(se.getMessage(), HttpStatus.BAD_REQUEST);
 		return response;
 	}
-	
+
 	@ExceptionHandler(DuplicateItemException.class)
 	public ResponseEntity<String> handleDuplicateItemException(DuplicateItemException se) {
 		ResponseEntity<String> response = new ResponseEntity<>(se.getMessage(), HttpStatus.BAD_REQUEST);
@@ -73,38 +72,10 @@ public class JewelleryExceptionHandler {
 
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	@ExceptionHandler(DataIntegrityViolationException.class)
-	public ResponseEntity<String> handleProductNotFoundException(DataIntegrityViolationException ex) {
+	public ResponseEntity<String> handleDataIntegretyException(DataIntegrityViolationException ex) {
 		ResponseEntity<String> response = new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
 		return response;
 	}
-
-//	@ResponseStatus(HttpStatus.BAD_REQUEST)
-//
-//	@ExceptionHandler(MethodArgumentNotValidException.class)
-//
-//	public ApiResponse handleValidationExceptions(MethodArgumentNotValidException ex) {
-//
-//		Map<String, String> errors = new HashMap<>();
-//
-//		ex.getBindingResult().getFieldErrors().forEach(error -> {
-//
-//			if (errors.containsKey(error.getField())) {
-//
-//				errors.put(error.getField(),
-//						String.format("%s, %s", errors.get(error.getField()), error.getDefaultMessage()));
-//
-//			} else {
-//
-//				errors.put(error.getField(), error.getDefaultMessage());
-//
-//			}
-//
-//		}
-//
-//		);
-//
-//		return new ApiResponse();
-//	}
 
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<String> handleInternalServerException(Exception ex) {

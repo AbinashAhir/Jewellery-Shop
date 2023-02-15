@@ -15,7 +15,6 @@ import com.jewellery.entity.Billing;
 import com.jewellery.entity.Feedback;
 import com.jewellery.entity.User;
 
-import com.jewellery.repository.AdminRepository;
 import com.jewellery.repository.BillingRepository;
 import com.jewellery.repository.FeedbackRepository;
 import com.jewellery.repository.UserRepository;
@@ -25,9 +24,6 @@ import com.jewellery.service.AdminService;
 public class AdminServiceImpl implements AdminService {
 
 	@Autowired
-	private AdminRepository adminRepository;
-
-	@Autowired
 	private UserRepository userRepository;
 
 	@Autowired
@@ -35,11 +31,11 @@ public class AdminServiceImpl implements AdminService {
 
 //	Add It
 
-//	@Autowired
-//	private BillingRepository billingRepository;
-//
-//	@Autowired
-//	private FeedbackRepository feedbackRepository;
+	@Autowired
+	private BillingRepository billingRepository;
+
+	@Autowired
+	private FeedbackRepository feedbackRepository;
 
 	// this method is use for adding the vendor
 	@Override
@@ -100,43 +96,26 @@ public class AdminServiceImpl implements AdminService {
 
 	}
 
-	// Add it
-//	@Override
-//	public List<Billing> getAllBill() {
-//		return billingRepository.findAll();
-//	}
-
-	// below code is use to create a list of user type to store all user
-	@Override
-	public List<User> getAllUser() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	/*
 	 * below code is use to create a list of billing type to store all bill by
 	 * fethching all bill
 	 */
+
+	// Add it
 	@Override
 	public List<Billing> getAllBill() {
-		// TODO Auto-generated method stub
-		return null;
+		return billingRepository.findAll();
 	}
 
 	/*
 	 * below code is use to create a list of Feedback type to store all Feedback by
 	 * fetching all feedback
 	 */
-	@Override
-	public List<Feedback> getAllFeedback() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	// Add it.
-//	@Override
-//	public List<Feedback> getAllFeedback() {
-//		return feedbackRepository.findAll();
-//	}
+	@Override
+	public List<Feedback> getAllFeedback() {
+		return feedbackRepository.findAll();
+	}
 
 }

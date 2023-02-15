@@ -90,11 +90,9 @@ public class VendorServiceImpl implements VendorService {
 		return temp + " Product Deleted";
 	}
 
-	// this method is fetching the bill by Billing id
-	@Override
-	public Billing getBillingById(Integer customerId, Integer purchaseId) {
-		return null;
 
-	}
+	
+	
+
 
 }
