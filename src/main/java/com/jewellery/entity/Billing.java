@@ -22,53 +22,71 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
+/*
+ * This is the class Billing which contains Billing details like id
+ * ,user,total cost
+ */
 public class Billing {
 
+	/*
+	 * here @Id annotation is use for making id as a primary key and @GeneratedValue
+	 * is use to generate id in sequence
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
 
 	private double totalCost;
 
+	// this method is use for fetching id..
 	public long getId() {
 		return id;
 	}
 
+	// this method is use for setting id variable
 	public void setId(long id) {
 		this.id = id;
 	}
 
+	// this method is use for fetching user
 	public User getUser() {
 		return user;
 	}
 
+	// this method is use for setting user variable
 	public void setUser(User user) {
 		this.user = user;
 	}
 
+	// this method is use for fetching purchase
 	public Purchase getPurchase() {
 		return purchase;
 	}
 
+	// this method is use for setting purchase of purchase type..
 	public void setPurchase(Purchase purchase) {
 		this.purchase = purchase;
 	}
 
+	// this method is use for fetching totalcost
 	public double getTotalCost() {
 		return totalCost;
 	}
 
+	// this method is use for setting totalcost variable
 	public void setTotalCost(double totalCost) {
 		this.totalCost = totalCost;
 	}
 
+	// mapping to the user table with the reference of userid
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "userid", referencedColumnName = "id")
 	private User user;
 
+	// mapping to the purchase table with the reference of purchaseid
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "purchaseid", referencedColumnName = "purchaseid")
 	private Purchase purchase;
-
 
 }

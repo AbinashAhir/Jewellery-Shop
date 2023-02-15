@@ -35,21 +35,26 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 
+	// below method is use for searching the product by productname
 	@GetMapping("/search/{productName}")
 	public Product getAllProductByProductName(@PathVariable("productName") String productName) {
 		return customerService.getAllProductByProductName(productName);
 	}
 
+	// below method is use for searching the product by productid
 	@GetMapping("/search/id/{productid}")
-	public Optional<Product> getAllProductByProductId(@PathVariable("productid") Integer productid) throws ProductNotFoundException {
+	public Optional<Product> getAllProductByProductId(@PathVariable("productid") Integer productid)
+			throws ProductNotFoundException {
 		return customerService.getAllProductByProductId(productid);
 	}
 
+	// below method is use for viewing the product..
 	@GetMapping("/viewProducts")
 	public List<Product> getAllProduct() {
 		return customerService.getAllProduct();
 	}
 
+	// below method is use for purchase the product by customer
 	@PostMapping("/purchase/{uid}/{pid}")
 	public String purchaseProduct(@Valid @RequestBody Purchase purchase, @PathVariable("uid") int uid,
 			@PathVariable("pid") int pid) {
@@ -74,6 +79,7 @@ public class CustomerController {
 //		return feedback.getFeedback();
 //	}
 
+	// below code is for providing feedback about the product by customer
 	@PostMapping("/feedback/{customerId}/{purchaseId}")
 	public String giveFeedbackByProductName(@RequestBody Feedback feedback, @PathVariable("customerId") int customerId,
 			@PathVariable("purchaseId") int purchaseId) throws UserNotFoundException, Exception {
@@ -96,6 +102,7 @@ public class CustomerController {
 		return feedback.getFeedback();
 	}
 
+	// below code is use for generating bill for the customer
 	@GetMapping("/getBill/{purchaseId}")
 	public Billing getBill(@PathVariable("purchaseId") int purchaseId) throws UserNotFoundException, Exception {
 		User user = customerService.getUserByPurchaseId(purchaseId);

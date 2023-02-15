@@ -32,7 +32,9 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
+	// Below code is for register the user,vendor and customer
 	@PostMapping("/register")
+<<<<<<< HEAD
 	public ResponseEntity<?> register(@Valid @RequestBody User user, BindingResult result)
 			throws TransactionSystemException, UserAlreadyExistException {
 //		if (!user.getPassword().equals(user.getConfirmPassword())) {
@@ -74,6 +76,11 @@ public class UserController {
 			return ResponseEntity.ok(userService.addUser(user));
 		}
 
+=======
+	public ResponseEntity<User> register(@Valid @RequestBody User user)
+			throws TransactionSystemException, UserAlreadyExistException {
+		return ResponseEntity.ok(userService.addUser(user));
+>>>>>>> 33adb19e43f780e8e5832ddce25c133679b05f60
 	}
 
 }

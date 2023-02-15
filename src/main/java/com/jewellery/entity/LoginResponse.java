@@ -4,9 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+<<<<<<< HEAD
 //@Data
 //@NoArgsConstructor
 //@AllArgsConstructor
+=======
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
+/*
+ * this class is use to give login response using variable user name ,access
+ * token and message
+ */
+>>>>>>> 33adb19e43f780e8e5832ddce25c133679b05f60
 public class LoginResponse {
 
 	private String username;
