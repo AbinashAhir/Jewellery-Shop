@@ -40,7 +40,6 @@ public class VendorServiceImpl implements VendorService {
 			productRepository.save(product);
 			return "Product Added Successfully";
 		}
-
 	}
 
 	@Override
@@ -48,7 +47,6 @@ public class VendorServiceImpl implements VendorService {
 		Product productId = productRepository.findById(product.getProductId()).get();
 
 		if (Objects.nonNull(product.getProductId())) {
-
 			productId.setProductId(product.getProductId());
 		}
 
@@ -91,16 +89,6 @@ public class VendorServiceImpl implements VendorService {
 
 	@Override
 	public Billing getBillingById(Integer customerId, Integer purchaseId) {
-//		Billing bl = new Billing();
-//		bl.setCustomerId(customerId);
-//		Registration user = rp.findById(customerId).orElse(null);
-//
-//		if (user != null) {
-//			return user.getPurchases().stream().map(Purchase::getProduct).collect(Collectors.toList());
-//
-//		} else {
-//			return null;
-//		}
 		return null;
 
 	}
