@@ -7,6 +7,8 @@ import com.jewellery.entity.User;
 import com.jewellery.service.AdminService;
 import com.jewellery.service.UserService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -22,13 +24,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/api/admin")
-
 /*
  * this class is use for adding,updating and deleting the vendor and also there
  * is view bill and view feedback
  */
+
+@RestController
+@RequestMapping("/api/admin")
 public class AdminController {
 
 	@Autowired
@@ -38,6 +40,8 @@ public class AdminController {
 	private UserService userService;
 
 	// Below method is use for update the vendor
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_ADMIN')")
 	@PostMapping("/addVendor")
 	public String addVendor(@RequestBody User user) {
 
@@ -46,24 +50,32 @@ public class AdminController {
 	}
 
 	// Below method is use for update the vendor
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_ADMIN')")
 	@PutMapping("/updateVendor")
 	public User updateVendor(@RequestBody User user) {
 		return adminService.updateVendor(user);
 	}
 
 	// Below method is use for delete the vendor
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_ADMIN')")
 	@DeleteMapping("/deleteVendor/{userId}")
 	public String deleteVender(@PathVariable("userId") Integer id) {
 		return adminService.deleteVendor(id);
 	}
 
 	// Below list is use for viewing feedback
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_ADMIN')")
 	@GetMapping("/viewFeedback")
 	public List<Feedback> getAllFeedback() {
 		return adminService.getAllFeedback();
 	}
 
 	// Below list is use for view bill
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_ADMIN')")
 	@GetMapping("/viewBill")
 	public List<Billing> getAllBill() {
 		return adminService.getAllBill();

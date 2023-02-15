@@ -15,7 +15,6 @@ import com.jewellery.entity.Billing;
 import com.jewellery.entity.Feedback;
 import com.jewellery.entity.User;
 
-import com.jewellery.repository.AdminRepository;
 import com.jewellery.repository.BillingRepository;
 import com.jewellery.repository.FeedbackRepository;
 import com.jewellery.repository.UserRepository;
@@ -96,37 +95,34 @@ public class AdminServiceImpl implements AdminService {
 
 	}
 
+
 	
 	//Add it
+
+	/*
+	 * below code is use to create a list of billing type to store all bill by
+	 * fethching all bill
+	 */
+
+	// Add it
+
 	@Override
 	public List<Billing> getAllBill() {
 		return billingRepository.findAll();
 	}
 
 
+	/*
+	 * below code is use to create a list of Feedback type to store all Feedback by
+	 * fetching all feedback
+	 */
 
-	//Add it.
+
+	// Add it.
 	@Override
 	public List<Feedback> getAllFeedback() {
 		return feedbackRepository.findAll();
 	}
-
-	@Override
-	public List<User> getAllUser() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
-
-
-
-	// Add it.
-//	@Override
-//	public List<Feedback> getAllFeedback() {
-//		return feedbackRepository.findAll();
-//	}
 
 
 }

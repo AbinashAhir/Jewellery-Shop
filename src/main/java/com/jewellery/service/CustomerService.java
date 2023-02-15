@@ -20,21 +20,13 @@ public interface CustomerService {
 
 	public List<Product> getAllProduct();
 
-	public Product getProduct(String productName);
-
-	public Product getFeedbackByProductName(String productName);
-
-	public String purchaseProduct(int uid, int pid);
+	public Purchase getPurchaseById(int purchaseId);
 
 	public User getUserById(int uid) throws UserNotFoundException;
 
 	public Product getProductById(int pid);
 
-//	public void savePurchase(Purchase purchase);
-	// newly added
 	public void savePurchase(Purchase purchase);
-
-	public Purchase getPurchaseById(int purchaseId);
 
 	public void saveFeedBack(Feedback feedback);
 
@@ -45,5 +37,7 @@ public interface CustomerService {
 	public double getTotalCost(int purchaseId);
 
 	public User getUserByPurchaseId(int purchaseId);
+
+//	Product getProduct(String productName);
 
 }

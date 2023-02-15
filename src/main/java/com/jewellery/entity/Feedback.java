@@ -14,26 +14,25 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
-@Getter
-@Entity
-@ToString
 /*
  * This is the class feedback which contain feedback detials about the
  * product,purchase id and user
  */
+
+@Setter
+@Getter
+@Entity
+@ToString
 public class Feedback {
-	/*
-	 * here @Id annotation is use for making feedback id as a primary key
-	 * and @GeneratedValue is use to generate feedback id in sequence
-	 */
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "feedbackid")
 	private int id;
 
-//	@NotBlank(message = "Feedback can't be blank.")
+	@NotBlank(message = "Feedback can't be blank.")
 	private String feedback;
+
 
 	// this method is use for fetching id..
 	public int getId() {
@@ -81,9 +80,9 @@ public class Feedback {
 //			this.user = user;
 //	}
 
+
 	// Mapping to the user table by userid with the reference of id
 	@OneToOne(cascade = CascadeType.PERSIST)
-
 	@JoinColumn(name = "userid", referencedColumnName = "id")
 	private User user;
 
