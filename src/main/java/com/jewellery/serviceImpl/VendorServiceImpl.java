@@ -103,7 +103,7 @@ public class VendorServiceImpl implements VendorService {
 	@Override
 	public String deleteProduct(Integer productId) {
 		productRepository.deleteById(productId);
-		return "Product Deleted";
+		return "Product Deleted Successfully";
 	}
 
 }
