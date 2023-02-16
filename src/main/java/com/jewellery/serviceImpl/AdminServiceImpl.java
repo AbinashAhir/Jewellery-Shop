@@ -25,12 +25,17 @@ import com.jewellery.service.AdminService;
 @Service
 public class AdminServiceImpl implements AdminService {
 
+
 	@Autowired
 	private UserRepository userRepository;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e6418a78bffd36ff27e555d9b98f41fe2a4668d
 	@Autowired
 	private BillingRepository billingRepository;
 
@@ -100,12 +105,15 @@ public class AdminServiceImpl implements AdminService {
 	// this method is use to delete vendor
 	@Override
 	public String deleteVendor(Integer userId) {
-		var firstName = userRepository.findById(userId).get().getFirstName();
-		var lastName = userRepository.findById(userId).get().getLastName();
 		userRepository.deleteById(userId);
-		return "Vendor " + firstName + " " + lastName + " deleted successfully";
+
+		return "Vendor deleted successfully";
 
 	}
+
+
+	
+	//Add it
 
 	/*
 	 * below code is use to create a list of billing type to store all bill by
@@ -113,20 +121,24 @@ public class AdminServiceImpl implements AdminService {
 	 */
 
 	// Add it
+
 	@Override
 	public List<Billing> getAllBill() {
 		return billingRepository.findAll();
 	}
+
 
 	/*
 	 * below code is use to create a list of Feedback type to store all Feedback by
 	 * fetching all feedback
 	 */
 
+
 	// Add it.
 	@Override
 	public List<Feedback> getAllFeedback() {
 		return feedbackRepository.findAll();
 	}
+
 
 }

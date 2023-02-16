@@ -38,6 +38,9 @@ public class User {
 
 	private String address;
 
+
+//	@NotEmpty(message = "Confirm Password can not be empty")
+//	@Size(min = 8, max = 12, message = "Confirm Password must match the password")
 	@Transient
 	private String confirmPassword;
 
