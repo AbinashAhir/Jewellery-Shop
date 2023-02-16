@@ -82,24 +82,41 @@ public class CustomerController {
 		return "Product Purchased by " + user.getFirstName();
 	}
 
-	
+
+	@SecurityRequirement(name = "Bearer Authentication")
+	@PreAuthorize(value = "hasRole('ROLE_USER')")
+
 	@PostMapping("/feedback/{customerId}/{purchaseId}")
-	public String giveFeedbackByProductName(@RequestBody Feedback feedback, @PathVariable("customerId")int customerId , @PathVariable("purchaseId")int purchaseId){
+	public String giveFeedbackByProductName(@RequestBody Feedback feedback, @PathVariable("customerId") int customerId,
+			@PathVariable("purchaseId") int purchaseId) throws UserNotFoundException, Exception {
+
 		User user = customerService.getUserById(purchaseId);
+		if (user == null) {
+			throw new UserNotFoundException("User with id: " + customerId + " not found");
+		}
 		feedback.setUser(user);
+
 		Purchase purchase = customerService.getPurchaseById(purchaseId);
+		if (purchase == null) {
+			throw new UserNotFoundException("Purchase with id: " + purchaseId + " not found");
+		}
 		feedback.setPurchase(purchase);
+
 		Product product = customerService.getProductById(purchaseId);
+		if (product == null) {
+			throw new UserNotFoundException("Product with id: " + purchaseId + " not found");
+		}
 		feedback.setProduct(product);
-
-
-		
-//		return feedback.getFeedback();
-		return customerService.saveFeedBack(feedback);
+//		
 
 		
+
+		customerService.saveFeedBack(feedback);
+		return feedback.getFeedback();
 
 	}
+	
+
 
 	// below code is use for generating bill for the customer
 

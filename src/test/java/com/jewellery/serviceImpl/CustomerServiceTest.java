@@ -52,7 +52,7 @@ import com.jewellery.repository.BillingRepository;
 		
 
 				@Test
-				void getAllProductByProductName() {
+				void getAllProductByProductName() throws ProductNotFoundException {
 					String productName="Name";
 					Product product =createProductMockData();
 					when(productrepository.findByProductName(productName)).thenReturn(Optional.of(product));

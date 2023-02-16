@@ -29,7 +29,7 @@ public class VendorServiceImpl implements VendorService {
 	private ProductRepository productRepository;
 
 	@Autowired
-	private PurchaseRepository pp;
+	private PurchaseRepository purchasePurRepository;
 
 	// this method is use for adding the products by vendor
 	@Override
@@ -82,13 +82,13 @@ public class VendorServiceImpl implements VendorService {
 	}
 
 	// this method is use for Deleting the products by vendors
-//	@Override
-//	public String deleteProduct(Product product) {
-//		Product productId = productRepository.findById(product.getProductId()).get();
-//		var temp = productId.getProductName().toString();
-//		productRepository.deleteById(productId.getProductId());
-//		return temp + " Product Deleted";
-//	}
+	@Override
+	public String deleteProduct(Product product) {
+		Product productId = productRepository.findById(product.getProductId()).get();
+		var temp = productId.getProductName().toString();
+		productRepository.deleteById(productId.getProductId());
+		return temp + " Product Deleted";
+	}
 
 
 	// this method is fetching the bill by Billing id
@@ -104,12 +104,6 @@ public class VendorServiceImpl implements VendorService {
 	public String deleteProduct(Integer productId) {
 		productRepository.deleteById(productId);
 		return "Product Deleted";
-	}
-
-	@Override
-	public String deleteProduct(Product product) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 

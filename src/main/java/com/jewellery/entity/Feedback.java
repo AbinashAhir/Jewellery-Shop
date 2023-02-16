@@ -34,6 +34,7 @@ public class Feedback {
 
 
 
+
 	// Mapping to the user table by userid with the reference of id
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "userid", referencedColumnName = "id")
