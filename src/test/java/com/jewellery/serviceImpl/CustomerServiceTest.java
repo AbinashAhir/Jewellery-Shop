@@ -20,7 +20,8 @@ package com.jewellery.serviceImpl;
 	import com.jewellery.entity.Product;
 	import com.jewellery.entity.Purchase;
 	import com.jewellery.entity.User;
-	import com.jewellery.repository.BillingRepository;
+import com.jewellery.exception.ProductNotFoundException;
+import com.jewellery.repository.BillingRepository;
 	import com.jewellery.repository.FeedbackRepository;
 	import com.jewellery.repository.ProductRepository;
 	import com.jewellery.repository.PurchaseRepository;
@@ -51,7 +52,7 @@ package com.jewellery.serviceImpl;
 		
 
 				@Test
-				void getAllProductByProductName() {
+				void getAllProductByProductName() throws ProductNotFoundException {
 					String productName="Name";
 					Product product =createProductMockData();
 					when(productrepository.findByProductName(productName)).thenReturn(Optional.of(product));

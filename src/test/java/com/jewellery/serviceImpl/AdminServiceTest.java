@@ -23,6 +23,7 @@ import com.jewellery.entity.Feedback;
 import com.jewellery.entity.Product;
 import com.jewellery.entity.Purchase;
 import com.jewellery.entity.User;
+import com.jewellery.exception.UserAlreadyExistException;
 import com.jewellery.repository.BillingRepository;
 import com.jewellery.repository.FeedbackRepository;
 import com.jewellery.repository.UserRepository;
@@ -47,7 +48,7 @@ public class AdminServiceTest {
 	
 
 	@Test
-	void addVendorTest() {
+	void addVendorTest() throws UserAlreadyExistException {
 		User user = createUserMockData();
 		when(userrepository.save(user)).thenReturn(user);
 		String response = adminServiceimpl.addVendor(user);

@@ -32,10 +32,6 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2e6418a78bffd36ff27e555d9b98f41fe2a4668d
 	@Autowired
 	private BillingRepository billingRepository;
 
@@ -113,14 +109,13 @@ public class AdminServiceImpl implements AdminService {
 
 
 	
-	//Add it
+
 
 	/*
 	 * below code is use to create a list of billing type to store all bill by
 	 * fethching all bill
 	 */
 
-	// Add it
 
 	@Override
 	public List<Billing> getAllBill() {
