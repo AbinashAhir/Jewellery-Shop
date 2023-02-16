@@ -15,8 +15,13 @@ public interface VendorService {
 	
 
 	public String updateProduct(Product product);
+
+	public Billing getBillingById(Integer customerId, Integer purchaseId);
+	public String deleteProduct(Integer productId);
+	
 	public String deleteProduct(Product product);
 	
+
 	
 }
 

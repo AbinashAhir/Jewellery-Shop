@@ -33,6 +33,54 @@ public class Feedback {
 //	@NotBlank(message = "Feedback can't be blank.")
 	private String feedback;
 
+
+	// this method is use for fetching id..
+	public int getId() {
+		return id;
+	}
+	// this method is use for setting id
+			public void setId(int id) {
+				this.id = id;
+	}
+	// this method is use for fetching feedback..
+	public String getFeedback() {
+		return feedback;
+	}
+
+	// this method is use for setting feedback
+	public void setFeedback(String feedback) {
+		this.feedback = feedback;
+	}
+
+	// this method is use for fetching User..
+	public User getUser() {
+		return user;
+	}
+	// this method is use for fetching product..
+	public Product getProduct() {
+		return product;
+	}
+	// this method is use for fetching Purchase..
+	public Purchase getPurchase() {
+		return purchase;
+	}
+//
+//	// this method is use for setting purchase variable
+//	public void setPurchase(Purchase purchase) {
+//		this.purchase = purchase;
+//	}
+//	
+//	
+//	// this method is use for setting Product variable of product type
+//		public void setProduct(Product product) {
+//			this.product = product;
+//	}
+//	// this method is use for setting user variable
+//		public void setUser(User user) {
+//			this.user = user;
+//	}
+
+
 	// Mapping to the user table by userid with the reference of id
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "userid", referencedColumnName = "id")

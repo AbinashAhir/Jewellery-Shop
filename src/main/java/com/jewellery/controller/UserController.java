@@ -76,4 +76,12 @@ public class UserController {
 
 
 	}
+
+//	public ResponseEntity<User> register(@Valid @RequestBody User user)
+//			throws TransactionSystemException, UserAlreadyExistException {
+//		return ResponseEntity.ok(userService.addUser(user));
+//
+//	}
+
 }
+

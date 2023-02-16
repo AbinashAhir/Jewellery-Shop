@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 
 import lombok.Setter;
 
+
 /*
  * this class is use to give login response using variable user name ,access
  * token and message
  */
+
 
 @Data
 @Getter
