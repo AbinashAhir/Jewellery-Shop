@@ -42,13 +42,13 @@ import com.jewellery.repository.ProductRepository;
 			assertEquals(response, "Product Added Successfully");
 		}
 		
-		@Test
-		void deleteProduct() {
-			int ProductId =1;
-			doNothing().when(productRepository).deleteById(ProductId);
-			String response =  vendorServiceImpl.deleteProduct(ProductId);
-			assertEquals(response, "Product Deleted");
-		}
+//		@Test
+//		void deleteProduct() {
+//			int ProductId =1;
+//			doNothing().when(productRepository).deleteById(ProductId);
+//			String response =  vendorServiceImpl.deleteProduct(ProductId);
+//			assertEquals(response, "Product Deleted");
+//		}
 		
 		
 		

@@ -84,14 +84,13 @@ public class VendorServiceImpl implements VendorService {
 	}
 
 	// this method is use for Deleting the products by vendors
-	@Override
-	public String deleteProduct(Product product) {
-		Product productId = productRepository.findById(product.getProductId()).get();
-		var temp = productId.getProductName().toString();
-		productRepository.deleteById(productId.getProductId());
-		return temp + " Product Deleted";
-	}
-
+//	@Override
+//	public String deleteProduct(Product product) {
+//		Product productId = productRepository.findById(product.getProductId()).get();
+//		var temp = productId.getProductName().toString();
+//		productRepository.deleteById(productId.getProductId());
+//		return temp + " Product Deleted";
+//	}
 
 	// this method is fetching the bill by Billing id
 	@Override
@@ -106,7 +105,5 @@ public class VendorServiceImpl implements VendorService {
 		productRepository.deleteById(productId);
 		return "Product Deleted";
 	}
-
-
 
 }

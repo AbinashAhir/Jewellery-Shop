@@ -49,14 +49,13 @@ public class VendorController {
 	// Below code is use for deleting the product by the vendor
 	@SecurityRequirement(name = "Bearer Authentication")
 	@PreAuthorize(value = "hasRole('ROLE_VENDOR')")
-	@DeleteMapping("/delete")
-
-	public String deleteProduct(@RequestBody Integer productId) {
+	@DeleteMapping("/delete/{productId}")
+	public String deleteProduct(@PathVariable("productId") int productId) {
 		return vendorService.deleteProduct(productId);
 	}
-
-		public String deleteProduct(@RequestBody Product product) {
-		return vendorService.deleteProduct(product);
-	}
+	
+//	public String deleteProduct(@RequestBody Product product) {
+//		return vendorService.deleteProduct(product);
+//	}
 
 }
