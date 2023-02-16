@@ -3,7 +3,7 @@ package com.jewellery.controller;
 import com.jewellery.entity.Billing;
 import com.jewellery.entity.Feedback;
 import com.jewellery.entity.User;
-
+import com.jewellery.exception.UserAlreadyExistException;
 import com.jewellery.service.AdminService;
 import com.jewellery.service.UserService;
 
@@ -36,17 +36,12 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 
-	@Autowired
-	private UserService userService;
-
 	// Below method is use for update the vendor
 	@SecurityRequirement(name = "Bearer Authentication")
 	@PreAuthorize(value = "hasRole('ROLE_ADMIN')")
 	@PostMapping("/addVendor")
-	public String addVendor(@RequestBody User user) {
-
-		userService.addVendor(user);
-		return "Vendor Added Successfully";
+	public String addVendor(@RequestBody User user) throws UserAlreadyExistException {
+		return adminService.addVendor(user);
 	}
 
 	// Below method is use for update the vendor
@@ -54,8 +49,7 @@ public class AdminController {
 	@PreAuthorize(value = "hasRole('ROLE_ADMIN')")
 	@PutMapping("/updateVendor")
 	public String updateVendor(@RequestBody User user) {
-		adminService.updateVendor(user);
-		return "Vendor updated sucessfully";
+		return adminService.updateVendor(user);
 	}
 
 	// Below method is use for delete the vendor

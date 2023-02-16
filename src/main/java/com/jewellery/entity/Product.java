@@ -22,8 +22,6 @@ import lombok.ToString;
  */
 
 @Entity
-@Getter
-@Setter
 @ToString
 public class Product implements Serializable {
 
@@ -55,4 +53,61 @@ public class Product implements Serializable {
 	@Min(value = 1, message = "Product cost can't be zero.")
 	private double productCost;
 
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getProductMaterial() {
+		return productMaterial;
+	}
+
+	public void setProductMaterial(String productMaterial) {
+		this.productMaterial = productMaterial;
+	}
+
+	public double getProductWeight() {
+		return productWeight;
+	}
+
+	public void setProductWeight(double productWeight) {
+		this.productWeight = productWeight;
+	}
+
+	public double getProductGmPerWeight() {
+		return productGmPerWeight;
+	}
+
+	public void setProductGmPerWeight(double productGmPerWeight) {
+		this.productGmPerWeight = productGmPerWeight;
+	}
+
+	public int getProductQuantity() {
+		return productQuantity;
+	}
+
+	public void setProductQuantity(int productQuantity) {
+		this.productQuantity = productQuantity;
+	}
+
+	public double getProductCost() {
+		return productCost;
+	}
+
+	public void setProductCost(double productCost) {
+		this.productCost = productCost;
+	}
+
+	
 }

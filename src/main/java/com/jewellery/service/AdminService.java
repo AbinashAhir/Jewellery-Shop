@@ -8,10 +8,11 @@ import org.springframework.stereotype.Repository;
 import com.jewellery.entity.Billing;
 import com.jewellery.entity.Feedback;
 import com.jewellery.entity.User;
+import com.jewellery.exception.UserAlreadyExistException;
 
 public interface AdminService {
 
-	public String addVendor(User user);
+	public String addVendor(User user) throws UserAlreadyExistException;
 
 	public String updateVendor(User user);
 

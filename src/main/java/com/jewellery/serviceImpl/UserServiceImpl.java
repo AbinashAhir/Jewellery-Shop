@@ -39,31 +39,6 @@ public class UserServiceImpl implements UserService {
 			return usersRepository.save(user);
 		}
 
-//		String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
-//		user.setPassword(encryptedPassword);
-//		return usersRepository.save(user);
-
 	}
-
-	/*
-	 * this method is use for encrypt password and pass the message
-	 * "Vendor added successfully"
-	 */
-	@Override
-	public String addVendor(User user) {
-		String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
-		user.setPassword(encryptedPassword);
-		usersRepository.save(user);
-		return "Vendor added successfully";
-	}
-
-	/*
-	 * this method is use update the encrypt password
-	 */
-	@Override
-	public User updateVendor(User user) {
-		String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
-		user.setPassword(encryptedPassword);
-		return usersRepository.save(user);
-	}
+	
 }

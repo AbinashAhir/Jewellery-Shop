@@ -6,17 +6,19 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import org.springframework.stereotype.Service;
 
 import com.jewellery.entity.Billing;
 import com.jewellery.entity.Feedback;
+import com.jewellery.entity.Product;
 import com.jewellery.entity.User;
-
+import com.jewellery.exception.UserAlreadyExistException;
 import com.jewellery.repository.BillingRepository;
 import com.jewellery.repository.FeedbackRepository;
+import com.jewellery.repository.ProductRepository;
 import com.jewellery.repository.UserRepository;
 import com.jewellery.service.AdminService;
 
@@ -38,10 +40,20 @@ public class AdminServiceImpl implements AdminService {
 	private FeedbackRepository feedbackRepository;
 
 	// this method is use for adding the vendor
+
 	@Override
-	public String addVendor(User user) {
-		userRepository.save(user);
-		return "Vendor added successfully";
+	public String addVendor(User user) throws UserAlreadyExistException {
+
+		if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+			throw new UserAlreadyExistException("User already exists");
+		} else {
+			String encryptedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
+			String encryptedcPassword = new BCryptPasswordEncoder().encode(user.getConfirmPassword());
+			user.setPassword(encryptedPassword);
+			user.setConfirmPassword(encryptedcPassword);
+			userRepository.save(user);
+			return "Vendor added successfully.";
+		}
 	}
 
 	// this method is use for updating the vendor
@@ -84,7 +96,7 @@ public class AdminServiceImpl implements AdminService {
 		}
 
 		userRepository.save(users);
-		return "Vendor updated";
+		return "Vendor updated sucessfully.";
 	}
 
 	// this method is use to delete vendor
