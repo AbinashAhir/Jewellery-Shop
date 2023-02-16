@@ -44,7 +44,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 		// this method is use for fetching all product by product id
 		if (!productRepository.findById(productId).isPresent()) {
-			throw new ProductNotFoundException("Product not found with id");
+			throw new ProductNotFoundException("Product not found with id " + productId);
 		} else {
 			return productRepository.findById(productId);
 		}
@@ -59,8 +59,12 @@ public class CustomerServiceImpl implements CustomerService {
 
 	// this method is use for fetching all product by productname
 	@Override
-	public Product getAllProductByProductName(String productName) {
-		return productRepository.findByProductName(productName).orElse(null);
+	public Product getAllProductByProductName(String productName) throws ProductNotFoundException {
+		if (!productRepository.findByProductName(productName).isPresent()) {
+			throw new ProductNotFoundException("Product not found with name " + productName);
+		} else {
+			return productRepository.findByProductName(productName).orElse(null);
+		}
 	}
 
 	// this method is use for fetching User by uid

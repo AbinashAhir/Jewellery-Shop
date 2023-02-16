@@ -37,8 +37,6 @@ public class UserController {
 	private UserRepository userRepository;
 
 	// Below code is for register the user,vendor and customer
-	@SecurityRequirement(name = "Bearer Authentication")
-	@PreAuthorize(value = "!hasRole('ROLE_ADMIN') && !hasRole('ROLE_VENDOR')")
 	@PostMapping("/register")
 
 	public ResponseEntity<?> register(@Valid @RequestBody User user, BindingResult result)
@@ -64,7 +62,7 @@ public class UserController {
 
 		else {
 			userService.addUser(user);
-			return ResponseEntity.ok(new RegisterResponse("Registration Successful.",user.getUsername()));
+			return ResponseEntity.ok(new RegisterResponse("Registration Successful.", user.getUsername()));
 		}
 
 	}

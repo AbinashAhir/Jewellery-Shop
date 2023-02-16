@@ -27,8 +27,6 @@ import lombok.Setter;
  */
 
 @Entity
-@Getter
-@Setter
 public class Purchase {
 
 	@Id
@@ -51,5 +49,37 @@ public class Purchase {
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "productid", referencedColumnName = "productId")
 	private Product product;
+
+	public Long getPurchaseId() {
+		return purchaseId;
+	}
+
+	public void setPurchaseId(Long purchaseId) {
+		this.purchaseId = purchaseId;
+	}
+
+	public Long getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Long quantity) {
+		this.quantity = quantity;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 
 }

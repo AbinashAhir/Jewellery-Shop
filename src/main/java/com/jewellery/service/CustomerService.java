@@ -16,7 +16,7 @@ public interface CustomerService {
 
 	public Optional<Product> getAllProductByProductId(Integer productId) throws ProductNotFoundException;
 
-	public Product getAllProductByProductName(String productName);
+	public Product getAllProductByProductName(String productName) throws ProductNotFoundException;
 
 	public List<Product> getAllProduct();
 

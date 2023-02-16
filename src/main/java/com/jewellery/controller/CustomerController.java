@@ -41,8 +41,14 @@ public class CustomerController {
 	@SecurityRequirement(name = "Bearer Authentication")
 	@PreAuthorize(value = "hasRole('ROLE_USER')")
 	@GetMapping("/search/{productName}")
-	public Product getAllProductByProductName(@PathVariable("productName") String productName) {
-		return customerService.getAllProductByProductName(productName);
+	public Product getAllProductByProductName(@PathVariable("productName") String productName)
+			throws ProductNotFoundException {
+
+		if (productName.equals(null)) {
+			throw new ProductNotFoundException("Product Name is null");
+		} else {
+			return customerService.getAllProductByProductName(productName);
+		}
 	}
 
 	// below method is use for searching the product by productid
@@ -76,45 +82,43 @@ public class CustomerController {
 		return "Product Purchased by " + user.getFirstName();
 	}
 
-//	
+//	@SecurityRequirement(name = "Bearer Authentication")
+//	@PreAuthorize(value = "hasRole('ROLE_USER')")
 //	@PostMapping("/feedback/{customerId}/{purchaseId}")
-//	public String giveFeedbackByProductName(@RequestBody Feedback feedback, @PathVariable("customerId")int customerId , @PathVariable("purchaseId")int purchaseId) throws DuplicateClassException{
+//	public String giveFeedbackByProductName(@RequestBody Feedback feedback, @PathVariable("customerId") int customerId,
+//			@PathVariable("purchaseId") int purchaseId) throws UserNotFoundException, Exception {
+//
 //		User user = customerService.getUserById(purchaseId);
+//		if (user == null) {
+//			throw new UserNotFoundException("User with id: " + customerId + " not found");
+//		}
 //		feedback.setUser(user);
+//
 //		Purchase purchase = customerService.getPurchaseById(purchaseId);
+//		if (purchase == null) {
+//			throw new UserNotFoundException("Purchase with id: " + purchaseId + " not found");
+//		}
 //		feedback.setPurchase(purchase);
+//
 //		Product product = customerService.getProductById(purchaseId);
+//		if (product == null) {
+//			throw new UserNotFoundException("Product with id: " + purchaseId + " not found");
+//		}
 //		feedback.setProduct(product);
+//
 //		customerService.saveFeedBack(feedback);
 //		return feedback.getFeedback();
 //	}
-
-	// below code is for providing feedback about the product by customer
-
-	@SecurityRequirement(name = "Bearer Authentication")
-	@PreAuthorize(value = "hasRole('ROLE_USER')")
+	
+	
 	@PostMapping("/feedback/{customerId}/{purchaseId}")
-	public String giveFeedbackByProductName(@RequestBody Feedback feedback, @PathVariable("customerId") int customerId,
-			@PathVariable("purchaseId") int purchaseId) throws UserNotFoundException, Exception {
-
+	public String giveFeedbackByProductName(@RequestBody Feedback feedback, @PathVariable("customerId")int customerId , @PathVariable("purchaseId")int purchaseId){
 		User user = customerService.getUserById(purchaseId);
-		if (user == null) {
-			throw new UserNotFoundException("User with id: " + customerId + " not found");
-		}
 		feedback.setUser(user);
-
 		Purchase purchase = customerService.getPurchaseById(purchaseId);
-		if (purchase == null) {
-			throw new UserNotFoundException("Purchase with id: " + purchaseId + " not found");
-		}
 		feedback.setPurchase(purchase);
-
 		Product product = customerService.getProductById(purchaseId);
-		if (product == null) {
-			throw new UserNotFoundException("Product with id: " + purchaseId + " not found");
-		}
 		feedback.setProduct(product);
-
 		customerService.saveFeedBack(feedback);
 		return feedback.getFeedback();
 	}
@@ -139,7 +143,6 @@ public class CustomerController {
 			throw new UserNotFoundException("Purchase with id: " + purchaseId + " not found");
 		}
 
-//		Product purchases = purchase.getProduct();
 		bill.setPurchase(purchase);
 
 		bill.setTotalCost(customerService.getTotalCost(purchaseId));

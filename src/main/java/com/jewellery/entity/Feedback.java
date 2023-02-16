@@ -19,8 +19,6 @@ import lombok.ToString;
  * product,purchase id and user
  */
 
-@Setter
-@Getter
 @Entity
 @ToString
 public class Feedback {
@@ -47,5 +45,47 @@ public class Feedback {
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "purchaseid", referencedColumnName = "purchaseid")
 	private Purchase purchase;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getFeedback() {
+		return feedback;
+	}
+
+	public void setFeedback(String feedback) {
+		this.feedback = feedback;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public Purchase getPurchase() {
+		return purchase;
+	}
+
+	public void setPurchase(Purchase purchase) {
+		this.purchase = purchase;
+	}
+	
+	
 
 }
