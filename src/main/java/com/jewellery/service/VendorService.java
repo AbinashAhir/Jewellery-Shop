@@ -19,7 +19,7 @@ public interface VendorService {
 	public Billing getBillingById(Integer customerId, Integer purchaseId);
 	public String deleteProduct(Integer productId);
 	
-	public String deleteProduct(Product product);
+//	public String deleteProduct(Product product);
 	
 
 	

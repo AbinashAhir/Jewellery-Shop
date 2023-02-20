@@ -47,7 +47,7 @@ import com.jewellery.repository.ProductRepository;
 			int ProductId =1;
 			doNothing().when(productRepository).deleteById(ProductId);
 			String response =  vendorServiceImpl.deleteProduct(ProductId);
-			assertEquals(response, "Product Deleted");
+			assertEquals(response, "Product Deleted Successfully");
 		}
 		
 		
