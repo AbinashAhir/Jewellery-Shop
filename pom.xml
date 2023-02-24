@@ -15,8 +15,9 @@
 	<properties>
 		<java.version>17</java.version>
   <sonar.host.url>http://localhost:9000</sonar.host.url>
-  <sonar.login>Jewellary-Shop</sonar.login>
-  <sonar.projectKey>sqp_e3aefe61900334661814717f01849bea892ba29e</sonar.projectKey>
+  <sonar.login>admin</sonar.login>
+    <sonar.password>Wonderla@27</sonar.password>
+  <sonar.projectKey>sqp_4af1fa16ff5a678a9482cf495f2444b157a6f9e0</sonar.projectKey>
 </properties>
 	<dependencies>
 		<dependency>
@@ -46,6 +47,16 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
