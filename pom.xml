@@ -14,7 +14,10 @@
 	<description>Jewellery Shop App using Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-	</properties>
+  <sonar.host.url>http://localhost:9000</sonar.host.url>
+  <sonar.login>Jewellary-Shop</sonar.login>
+  <sonar.projectKey>sqp_e3aefe61900334661814717f01849bea892ba29e</sonar.projectKey>
+</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -102,6 +105,18 @@
 			<artifactId>passay</artifactId>
 			<version>1.6.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+		<dependency>
+			<groupId>org.sonarsource.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<version>3.8.0.2131</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.5</version>
+		</dependency>
 		<!--<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
@@ -139,6 +154,11 @@
 					</excludes>
 				</configuration>
 			</plugin>
-		</plugins>
+		<plugin>
+			<groupId>org.sonarsource.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<version>3.9.0.2155</version>
+		</plugin>
+	</plugins>
 	</build>
 </project>
