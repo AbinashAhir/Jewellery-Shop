@@ -70,7 +70,7 @@ public class CustomerController {
 
 	// below method is use for purchase the product by customer
 	@SecurityRequirement(name = "Bearer Authentication")
-	@PreAuthorize(value = "hasRole('ROLE_USER')")
+	@PreAuthorize(value = "!hasRole('ROLE_ADMIN') && !hasRole('ROLE_VENDOR')")
 	@PostMapping("/purchase/{uid}/{pid}")
 	public String purchaseProduct(@Valid @RequestBody Purchase purchase, @PathVariable("uid") int uid,
 			@PathVariable("pid") int pid) {
@@ -82,8 +82,10 @@ public class CustomerController {
 		return "Product Purchased by " + user.getFirstName();
 	}
 
+
 	@SecurityRequirement(name = "Bearer Authentication")
 	@PreAuthorize(value = "hasRole('ROLE_USER')")
+
 	@PostMapping("/feedback/{customerId}/{purchaseId}")
 	public String giveFeedbackByProductName(@RequestBody Feedback feedback, @PathVariable("customerId") int customerId,
 			@PathVariable("purchaseId") int purchaseId) throws UserNotFoundException, Exception {
@@ -105,9 +107,13 @@ public class CustomerController {
 			throw new UserNotFoundException("Product with id: " + purchaseId + " not found");
 		}
 		feedback.setProduct(product);
+//		
+
+		
 
 		customerService.saveFeedBack(feedback);
 		return feedback.getFeedback();
+
 	}
 	
 

@@ -28,7 +28,7 @@ public interface CustomerService {
 
 	public void savePurchase(Purchase purchase);
 
-	public void saveFeedBack(Feedback feedback);
+	public String saveFeedBack(Feedback feedback);
 
 	public Billing getBill(Billing bill);
 

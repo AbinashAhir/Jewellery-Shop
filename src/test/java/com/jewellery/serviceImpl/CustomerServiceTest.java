@@ -56,7 +56,13 @@ import com.jewellery.repository.BillingRepository;
 					String productName="Name";
 					Product product =createProductMockData();
 					when(productrepository.findByProductName(productName)).thenReturn(Optional.of(product));
-					Product response =customerServiceimpl.getAllProductByProductName(productName);
+					Product response = null;
+					try {
+						response = customerServiceimpl.getAllProductByProductName(productName);
+					} catch (ProductNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					assertEquals(response.getProductName(),product.getProductName());
 					
 		}

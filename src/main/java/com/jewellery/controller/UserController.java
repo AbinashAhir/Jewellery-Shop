@@ -118,6 +118,18 @@ public class UserController {
 			user = userService.addUser(user);
 			return ResponseEntity.ok(new RegisterResponse("Registration Successful.", dto.getUsername()));
 		}
+
+
+		
+	}
+
+
+	public ResponseEntity<User> register(@Valid @RequestBody User user)
+			throws TransactionSystemException, UserAlreadyExistException {
+		return ResponseEntity.ok(userService.addUser(user));
+
+
+
 	}
 
 }

@@ -41,7 +41,6 @@ public class VendorServiceImpl implements VendorService {
 			productRepository.save(product);
 			return "Product Added Successfully";
 		}
-
 	}
 
 	// This method is use for updating the products by vendor
@@ -50,7 +49,6 @@ public class VendorServiceImpl implements VendorService {
 		Product productId = productRepository.findById(product.getProductId()).get();
 
 		if (Objects.nonNull(product.getProductId())) {
-
 			productId.setProductId(product.getProductId());
 		}
 
@@ -97,5 +95,6 @@ public class VendorServiceImpl implements VendorService {
 		return null;
 
 	}
+
 
 }

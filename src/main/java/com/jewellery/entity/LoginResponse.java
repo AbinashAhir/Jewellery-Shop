@@ -25,11 +25,11 @@ public class LoginResponse {
 	private String username;
 	private String accessToken;
 	private String message;
-
+	
 	public LoginResponse(String message) {
-
-		this.message = message;
+		this.message=message;
 	}
+
 
 	public LoginResponse(String username2, String string) {
 		this.username = username2;
@@ -38,3 +38,8 @@ public class LoginResponse {
 	}
 
 }
+
+	
+
+	
+	
