@@ -1,41 +1,3 @@
-2023-02-27 11:15:06 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 10004 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 11:15:06 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 11:15:06 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 11:15:07 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 11:15:09 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 3.438 seconds (process running for 101.817)
-2023-02-27 11:15:50 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 24748 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 11:15:50 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 11:15:50 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 11:15:55 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 11:15:58 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 8.462 seconds (process running for 9.479)
-2023-02-27 11:25:26 [http-nio-8080-exec-2] DEBUG c.j.controller.AuthController -
-				Loading index page...
-2023-02-27 11:25:26 [http-nio-8080-exec-2] INFO  c.j.controller.AuthController -
-				Info level message ! 
-2023-02-27 11:25:26 [http-nio-8080-exec-2] WARN  c.j.controller.AuthController -
-				Warn level message !
-2023-02-27 11:25:26 [http-nio-8080-exec-2] ERROR c.j.controller.AuthController -
-				Error level  message !
-2023-02-27 11:25:26 [http-nio-8080-exec-2] ERROR c.j.controller.AuthController -
-				Fatal level message !
-2023-02-27 11:28:23 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 24748 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 11:28:23 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 11:28:23 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 11:28:25 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
 2023-02-27 11:28:27 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
 				Started JewelleryShopApplication in 3.778 seconds (process running for 758.622)
 2023-02-27 11:33:07 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
@@ -174,189 +136,42 @@
 				No active profile set, falling back to 1 default profile: "default"
 2023-02-27 12:09:41 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
 				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:09:42 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 1.621 seconds (process running for 3233.756)
-2023-02-27 12:11:09 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 24748 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:11:09 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
+
+2023-02-27 16:27:01 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Starting JewelleryShopApplication using Java 17.0.6 with PID 20668 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
+2023-02-27 16:27:01 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
 				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:11:09 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+2023-02-27 16:27:01 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
 				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:11:09 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
+2023-02-27 16:27:05 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
 				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:11:10 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 1.626 seconds (process running for 3321.742)
-2023-02-27 12:13:18 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 24748 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:13:18 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
+2023-02-27 16:27:06 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Starting JewelleryShopApplication using Java 17.0.6 with PID 3736 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
+2023-02-27 16:27:06 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
 				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:13:18 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+2023-02-27 16:27:06 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
 				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:13:19 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
+2023-02-27 16:27:09 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Started JewelleryShopApplication in 7.706 seconds (process running for 8619.547)
+2023-02-27 16:27:14 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
 				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:13:20 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 1.821 seconds (process running for 3451.21)
-2023-02-27 12:19:22 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 24748 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:19:22 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
+2023-02-27 16:34:41 [http-nio-8080-exec-2] DEBUG c.j.controller.AuthController -
+				Authenticating user: Vidya
+2023-02-27 22:24:51 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Starting JewelleryShopApplication using Java 17.0.6 with PID 20668 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
+2023-02-27 22:24:51 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
 				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:19:22 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+2023-02-27 22:24:51 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
 				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:19:23 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
+2023-02-27 22:24:53 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
 				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:19:24 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 1.476 seconds (process running for 3815.252)
-2023-02-27 12:24:24 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 24748 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:24:24 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
+2023-02-27 22:24:55 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Started JewelleryShopApplication in 3.859 seconds (process running for 30097.211)
+2023-02-27 23:03:17 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Starting JewelleryShopApplication using Java 17.0.6 with PID 26232 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
+2023-02-27 23:03:17 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
 				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:24:24 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+2023-02-27 23:03:17 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
 				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:24:25 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
+2023-02-27 23:03:26 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
 				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:24:26 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 1.918 seconds (process running for 4117.209)
-2023-02-27 12:24:46 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:24:46 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:24:46 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:24:52 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:24:55 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 9.937 seconds (process running for 11.001)
-2023-02-27 12:25:35 [http-nio-8080-exec-4] DEBUG c.j.controller.AuthController -
-				Authenticating user: Pavitra
-2023-02-27 12:25:40 [http-nio-8080-exec-5] DEBUG c.j.controller.CustomerController -
-				Found product with ID: 52
-2023-02-27 12:25:48 [http-nio-8080-exec-6] DEBUG c.j.controller.CustomerController -
-				Processing purchase request for user ID 10 and product ID 52
-2023-02-27 12:26:16 [http-nio-8080-exec-8] DEBUG c.j.controller.CustomerController -
-				Processing purchase request for user ID 16 and product ID 52
-2023-02-27 12:29:19 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:29:19 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:29:19 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:29:20 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:29:22 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 2.757 seconds (process running for 277.805)
-2023-02-27 12:30:53 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:30:53 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:30:53 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:30:54 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:30:56 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 2.707 seconds (process running for 371.811)
-2023-02-27 12:32:12 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:32:12 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:32:12 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:32:13 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:32:14 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 2.66 seconds (process running for 450.399)
-2023-02-27 12:36:29 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:36:29 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:36:29 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:36:30 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:36:31 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 1.969 seconds (process running for 707.396)
-2023-02-27 12:37:43 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:37:43 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:37:43 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:37:44 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:37:44 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 1.655 seconds (process running for 780.705)
-2023-02-27 12:38:54 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:38:54 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:38:54 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:38:55 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:38:56 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 1.629 seconds (process running for 852.138)
-2023-02-27 12:39:23 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:39:23 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:39:23 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:39:24 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:39:25 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 2.258 seconds (process running for 881.709)
-2023-02-27 12:51:26 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:51:26 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:51:26 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:51:27 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:51:28 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 1.768 seconds (process running for 1603.978)
-2023-02-27 12:52:11 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 2932 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:52:11 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:52:11 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:52:12 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:52:13 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 2.008 seconds (process running for 1649.718)
-2023-02-27 12:52:37 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Starting JewelleryShopApplication using Java 17.0.6 with PID 20956 (C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop\target\classes started by VKHARVI in C:\Users\VKHARVI\Documents\Sprint1\Jewellery-Shop)
-2023-02-27 12:52:37 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
-				Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-27 12:52:37 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				No active profile set, falling back to 1 default profile: "default"
-2023-02-27 12:52:43 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
-				Filter 'jwtAuthFilter' configured for use
-2023-02-27 12:52:46 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
-				Started JewelleryShopApplication in 8.87 seconds (process running for 9.922)
-2023-02-27 12:53:28 [http-nio-8080-exec-1] DEBUG c.j.controller.UserController -
-				Received register request for user Pavitra
-2023-02-27 12:54:05 [http-nio-8080-exec-4] DEBUG c.j.controller.UserController -
-				Received register request for user Pavi
-2023-02-27 12:54:05 [http-nio-8080-exec-4] DEBUG c.j.controller.UserController -
-				Registration request for user Pavi failed with validation errors: [Password must be between 8 and 12 characters long, Password must be alpbabets and numbers only with minimum length 8 and maximum 12.]
-2023-02-27 12:54:20 [http-nio-8080-exec-6] DEBUG c.j.controller.UserController -
-				Received register request for user Pavi
-2023-02-27 12:54:21 [http-nio-8080-exec-6] DEBUG c.j.controller.UserController -
-				Registration request for user Pavi succeeded
-2023-02-27 12:54:28 [http-nio-8080-exec-7] DEBUG c.j.controller.AuthController -
-				Authenticating user: Pavi
-2023-02-27 12:54:53 [http-nio-8080-exec-8] DEBUG c.j.controller.VendorController -
-				Received request to add new product with name=Gold anklet
-2023-02-27 12:55:33 [http-nio-8080-exec-9] DEBUG c.j.controller.VendorController -
-				Received request to update product with id=202
-2023-02-27 12:56:08 [http-nio-8080-exec-10] DEBUG c.j.controller.VendorController -
-				Received request to delete product with id=1
-2023-02-27 12:56:46 [http-nio-8080-exec-2] DEBUG c.j.controller.VendorController -
-				Received request to delete product with id=1
-2023-02-27 12:57:05 [http-nio-8080-exec-1] DEBUG c.j.controller.VendorController -
-				Received request to delete product with id=52
-2023-02-27 13:04:56 [http-nio-8080-exec-5] DEBUG c.j.controller.VendorController -
-				Received request to delete product with id=1
-2023-02-27 13:05:06 [http-nio-8080-exec-6] DEBUG c.j.controller.VendorController -
-				Received request to delete product with id=202
