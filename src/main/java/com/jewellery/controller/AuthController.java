@@ -2,9 +2,10 @@ package com.jewellery.controller;
 
 import java.util.ArrayList;
 
+import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,19 +16,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jewellery.config.JwtUtils;
-import com.jewellery.entity.BadCredentialResponse;
 import com.jewellery.entity.LoginRequest;
 import com.jewellery.entity.LoginResponse;
 
 import com.jewellery.exception.BadCredentialsException;
 import com.jewellery.serviceImpl.JpaUserDetailsService;
-
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+	
+	Logger log = org.slf4j.LoggerFactory.getLogger(AuthController.class);
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -42,6 +43,10 @@ public class AuthController {
 	@PostMapping("/login")
 	public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginRequest request, HttpServletResponse response)
 			throws BadCredentialsException {
+		
+		log.debug("Authenticating user: {}", request.getUsername());
+
+
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(),
 					request.getPassword(), new ArrayList<>()));
@@ -60,7 +65,8 @@ public class AuthController {
 				throw new BadCredentialsException();
 
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
+			log.error("Authentication failed for user: {}", request.getUsername(), e);
 			System.out.println(e);
 			LoginResponse responses = new LoginResponse("Your credentials are incorrect.");
 			responses.setUsername(request.getUsername());
