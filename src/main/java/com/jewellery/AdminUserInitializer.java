@@ -26,7 +26,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser1.setLastName("Ahir");
 		adminUser1.setEmail("ahirabinash@gmail.com");
 		adminUser1.setPhoneNumber("8457823790");
-		adminUser1.setAddress("Banglore");
+		adminUser1.setAddress("Odisha");
 		adminUser1.setId(1);
 
 		
@@ -40,7 +40,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser2.setLastName("Kharvi");
 		adminUser2.setEmail("Vidya@gmail.com");
 		adminUser2.setPhoneNumber("8457898790");
-		adminUser2.setAddress("Banglore");
+		adminUser2.setAddress("Honnavar");
 		adminUser2.setId(2);
 		
 		User adminUser3 = new User();
@@ -64,7 +64,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser4.setLastName("Marla");
 		adminUser4.setEmail("marlamounika07@gmail.com");
 		adminUser4.setPhoneNumber("9652365180");
-		adminUser4.setAddress("Banglore");
+		adminUser4.setAddress("Hydrabad");
 		adminUser4.setId(4);
 		
 		User adminUser5 = new User();
@@ -76,7 +76,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser5.setLastName("G");
 		adminUser5.setEmail("raghuvijay1629@gmail.com");
 		adminUser5.setPhoneNumber("6369075050");
-		adminUser5.setAddress("Banglore");
+		adminUser5.setAddress("Tamilnadh");
 		adminUser5.setId(5);
 		
 		User adminUser6 = new User();
@@ -88,7 +88,7 @@ public class AdminUserInitializer implements CommandLineRunner {
 		adminUser6.setLastName("Raj");
 		adminUser6.setEmail("shubham2@gmail.com");
 		adminUser6.setPhoneNumber("9523813880");
-		adminUser6.setAddress("Banglore");
+		adminUser6.setAddress("Bihar");
 		adminUser6.setId(6);
 
 
