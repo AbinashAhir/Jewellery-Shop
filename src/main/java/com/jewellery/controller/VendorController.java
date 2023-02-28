@@ -2,6 +2,7 @@ package com.jewellery.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,6 +27,7 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/vendor")
 public class VendorController {
+	Logger log = org.slf4j.LoggerFactory.getLogger(VendorController.class);
 
 	@Autowired
 	private VendorService vendorService;
@@ -35,7 +37,8 @@ public class VendorController {
 	@PreAuthorize(value = "hasRole('ROLE_VENDOR')")
 	@PostMapping("/add")
 	public String addProduct(@Valid @RequestBody Product product) throws DuplicateItemException {
-		return vendorService.addProduct(product);
+		log.debug("Received request to add new product with name={}", product.getProductName());
+        return vendorService.addProduct(product);
 	}
 
 	// Below code is use for updating the product by the vendor
@@ -43,6 +46,7 @@ public class VendorController {
 	@PreAuthorize(value = "hasRole('ROLE_VENDOR')")
 	@PutMapping("/update")
 	public String updateProduct(@Valid @RequestBody Product product) {
+		log.debug("Received request to update product with id={}", product.getProductId());
 		return vendorService.updateProduct(product);
 	}
 
@@ -51,6 +55,7 @@ public class VendorController {
 	@PreAuthorize(value = "hasRole('ROLE_VENDOR')")
 	@DeleteMapping("/delete/{productId}")
 	public String deleteProduct(@PathVariable("productId") int productId) {
+		log.debug("Received request to delete product with id={}", productId);
 		return vendorService.deleteProduct(productId);
 	}
 	
