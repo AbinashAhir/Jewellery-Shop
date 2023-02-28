@@ -175,3 +175,33 @@
 				No active profile set, falling back to 1 default profile: "default"
 2023-02-27 23:03:26 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
 				Filter 'jwtAuthFilter' configured for use
+2023-02-28 11:04:05 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Starting JewelleryShopApplication using Java 17.0.6 with PID 10304 (C:\Users\CHANDAKS\Documents\Sprint1\Jewellery-Shop\target\classes started by chandaks in C:\Users\CHANDAKS\Documents\Sprint1\Jewellery-Shop)
+2023-02-28 11:04:05 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
+				Running with Spring Boot v3.0.2, Spring v6.0.4
+2023-02-28 11:04:05 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				No active profile set, falling back to 1 default profile: "default"
+2023-02-28 11:04:28 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Starting JewelleryShopApplication using Java 17.0.6 with PID 10304 (C:\Users\CHANDAKS\Documents\Sprint1\Jewellery-Shop\target\classes started by chandaks in C:\Users\CHANDAKS\Documents\Sprint1\Jewellery-Shop)
+2023-02-28 11:04:28 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
+				Running with Spring Boot v3.0.2, Spring v6.0.4
+2023-02-28 11:04:28 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				No active profile set, falling back to 1 default profile: "default"
+2023-02-28 11:54:16 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Starting JewelleryShopApplication using Java 17.0.6 with PID 10304 (C:\Users\CHANDAKS\Documents\Sprint1\Jewellery-Shop\target\classes started by chandaks in C:\Users\CHANDAKS\Documents\Sprint1\Jewellery-Shop)
+2023-02-28 11:54:16 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
+				Running with Spring Boot v3.0.2, Spring v6.0.4
+2023-02-28 11:54:16 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				No active profile set, falling back to 1 default profile: "default"
+2023-02-28 11:54:17 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
+				Filter 'jwtAuthFilter' configured for use
+2023-02-28 11:54:19 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Started JewelleryShopApplication in 2.1 seconds (process running for 3385.652)
+2023-02-28 12:14:15 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				Starting JewelleryShopApplication using Java 17.0.6 with PID 11496 (C:\Users\CHANDAKS\Documents\Sprint1\Jewellery-Shop\target\classes started by chandaks in C:\Users\CHANDAKS\Documents\Sprint1\Jewellery-Shop)
+2023-02-28 12:14:15 [restartedMain] DEBUG c.jewellery.JewelleryShopApplication -
+				Running with Spring Boot v3.0.2, Spring v6.0.4
+2023-02-28 12:14:15 [restartedMain] INFO  c.jewellery.JewelleryShopApplication -
+				No active profile set, falling back to 1 default profile: "default"
+2023-02-28 12:14:21 [restartedMain] DEBUG com.jewellery.config.JwtAuthFilter -
+				Filter 'jwtAuthFilter' configured for use
