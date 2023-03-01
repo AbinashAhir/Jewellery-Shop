@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import javax.naming.Binding;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,7 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/auth")
 public class UserController {
+	Logger log = org.slf4j.LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
 	private UserService userService;
@@ -87,11 +89,12 @@ public class UserController {
 	@PostMapping("/register")
 	public ResponseEntity<?> register(@Valid @RequestBody UserDTO dto, BindingResult result)
 			throws TransactionSystemException, UserAlreadyExistException {
-
+		log.debug("Received register request for user {}", dto.getUsername());
 		if (result.hasErrors()) {
 			// create a list of error messages from the BindingResult object
 			List<String> errorMessages = result.getAllErrors().stream().map(error -> error.getDefaultMessage())
 					.collect(Collectors.toList());
+			log.debug("Registration request for user {} failed with validation errors: {}", dto.getUsername(), errorMessages);
 
 			// return a custom error message with a BAD REQUEST status code
 			return ResponseEntity.badRequest()
@@ -100,6 +103,8 @@ public class UserController {
 			result.rejectValue("Role prefix", "error.role prefix", "Role must be start with ROLE_");
 			List<String> errorMessages = result.getAllErrors().stream().map(error -> error.getDefaultMessage())
 					.collect(Collectors.toList());
+			log.debug("Registration request for user {} failed with role prefix error: {}", dto.getUsername(), errorMessages);
+
 			// return the registration form view with validation errors
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST)
 					.body(new BadCredentialResponse("Please check your Role prefix again.", errorMessages));
@@ -110,13 +115,15 @@ public class UserController {
 					"Password and confirm password do not match.");
 			List<String> errorMessages = result.getAllErrors().stream().map(error -> error.getDefaultMessage())
 					.collect(Collectors.toList());
+			log.debug("Registration request for user {} failed with password mismatch error: {}", dto.getUsername(), errorMessages);
 			// return the registration form view with validation errors
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
 					new BadCredentialResponse("Please check your password and confirm password again.", errorMessages));
 		} else {
 			User user = converter.dtoToEntity(dto);
 			user = userService.addUser(user);
-			return ResponseEntity.ok(new RegisterResponse("Registration Successful.", dto.getUsername()));
+			log.debug("Registration request for user {} succeeded", dto.getUsername());
+         return ResponseEntity.ok(new RegisterResponse("Registration Successful.", dto.getUsername()));
 		}
 
 
@@ -126,6 +133,7 @@ public class UserController {
 
 	public ResponseEntity<User> register(@Valid @RequestBody User user)
 			throws TransactionSystemException, UserAlreadyExistException {
+		log.debug("Received register request for user {}", user.getUsername());
 		return ResponseEntity.ok(userService.addUser(user));
 
 

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jewelleryshop-app-deployment
+  labels:
+    app: jewelleryshop-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jewelleryshop-app
+  template:
+    metadata:
+      labels:
+        app: jewelleryshop-app
+    spec:
+      containers:
+      - name: jewelleryshop-app
+        image: chandana27ks/jewelleryshop:0.4
+        ports:
+        - containerPort: 8080
