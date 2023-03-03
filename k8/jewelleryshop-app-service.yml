@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jewelleryshop-app # Sets service name
+  labels:
+    app: jewelleryshop-app # Labels and Selectors
+spec:
+  type: NodePort # Sets service type
+  ports:
+    - port: 8080 # Sets port to run the multiplex-app application
+  selector:
+    app: jewelleryshop-app

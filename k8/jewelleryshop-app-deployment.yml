@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: jewelleryshop-app
-        image: chandana27ks/jewelleryshop:0.4
+        image: abinashahir/jewelleryshopapp:0.5
         ports:
         - containerPort: 8080
